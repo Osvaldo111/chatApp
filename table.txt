@@ -1,0 +1,21 @@
+CREATE TABLE parents(
+	id serial PRIMARY KEY,
+	firstName varchar(50),
+	lastName varchar(50),
+	dateBirth DATE
+);
+
+INSERT INTO parents(firstName, lastName, dateBirth)
+VALUES('Derek', 'lol', '1996-08-30');
+
+CREATE TABLE children(
+	children_id serial PRIMARY KEY,
+	parent_id integer REFERENCES parents(id),
+	firstName varchar(50),
+	lastName varchar(50),
+	dateBirth DATE 
+);
+
+
+INSERT INTO children(parent_id, firstName, lastName, dateBirth)
+VALUES(1, 'Pufff', 'Carrillo', '1996-08-30');

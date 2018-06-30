@@ -1,0 +1,110 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.bgimg {
+    margin-top: 0px;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../font3.jpg");
+    min-height: 100%;
+    
+    padding-top: 60px;
+
+}
+
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+}
+
+form{
+    padding-bottom: 30px;
+
+}
+/*Center a text in the image of the home page*/
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:80px;
+    color: white;
+}
+
+.content {
+    max-width: 500px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.title-container{
+
+    font-family:'Times New Roman';
+    margin:auto;
+    text-align:center;
+    color: white;
+    max-width: 150px;
+    background-color: black;
+    margin-bottom:40px;
+    font-size:25px;
+}
+
+.center_div {
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+
+.form_style{
+    max-width: 500px;
+    margin-bottom:40px;
+}
+
+.container{
+    padding-bottom: 30px;
+    color: white;
+}
+
+
+/*The style for the bar that ask the user for "sign up", if the
+ user doesn't have an account*/
+.signUpBar{
+
+margin-top: 15px;
+border-top: 1px solid#ffffff;
+padding-top: 15px;
+font-size: 85%;
+color: white;
+}
+
+/*The style for the title: Connecting a billion people with chat*/
+.title-chat{
+    font-size: 40px;
+    color: white;
+}
+
+.md-form{
+
+}
+
