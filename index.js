@@ -42,7 +42,7 @@ function registerUser(req,respond){
 	const query = {
 	  // give the query a unique name
 	  name: 'fetch-user',
-	  text: 'SELECT * FROM user WHERE id = $1',
+	  text: 'SELECT * FROM users WHERE id = $1',
 	  values: [1]
 	}
 
