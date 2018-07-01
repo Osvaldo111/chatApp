@@ -15,16 +15,22 @@ express()
   .get('/', function(req, res){
 
 	res.render('pages/index');
-	registerUser(req, res);
+	//registerUser(req, res);
 
 
 
+  })
+  .post('/welcome',function(req,res){
+
+	res.render('pages/index');
+	console.log(req.body.userName);
+	console.log(req.body.userPassword);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 /*This function is designed to register the user
  into the database*/
-function registerUser(req,respond){
+function registerUser(req,respond, userName, userPassword){
 
 
 	const { Pool} = require('pg')
@@ -34,21 +40,33 @@ function registerUser(req,respond){
  	 connectionString: connectionString,
 	})
 
-	pool.query('SELECT NOW()', (err, res) => {
-	  console.log(err, res)
-	  
-	})
 
-	// Query
+// Insert the user into the database
+const query = {
+  text: 'INSERT INTO users(user_name, password) VALUES($1, $2)',
+  values: [userName, userPassword],
+}
+
+
+// callback
+client.query(query, (err, res) => {
+  if (err) {
+    console.log(err.stack)
+  } else {
+    console.log(res.rows[0])
+  }
+})
+
+/*	// Query
 	const query = {
 	  // give the query a unique name
 	  name: 'fetch-user',
 	  text: 'SELECT * FROM users WHERE user_id = $1',
 	  values: [1]
-	}
+	}*/
 
 
-	// callback
+/*	// callback
 	pool.query(query, (err, res) => {
 	  if (err) {
 	    console.log(err.stack, "HAHAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
@@ -57,7 +75,7 @@ function registerUser(req,respond){
 	    console.log(res.rows[0])
 	  }
 	})
-
+*/
 
 
 }
