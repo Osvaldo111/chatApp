@@ -15,8 +15,6 @@ express()
   .get('/', function(req, res){
 
 	res.render('pages/index');
-	//registerUser(req, res);
-
 
 
   })
@@ -25,12 +23,19 @@ express()
 	res.render('pages/index');
 	console.log(req.body.userName);
 	console.log(req.body.userPassword);
+
+	// Call the function to inser the user
+    registerUser(req, res);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 /*This function is designed to register the user
  into the database*/
-function registerUser(req,respond, userName, userPassword){
+function registerUser(req,respond){
+
+
+	var userName = req.body.userName;
+	var userPassword = req.body.userPassword;
 
 
 	const { Pool} = require('pg')
