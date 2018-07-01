@@ -50,7 +50,7 @@ function registerUser(req,respond){
 	// callback
 	pool.query(query, (err, res) => {
 	  if (err) {
-	    console.log(err.stack)
+	    console.log(err.stack, "HAHAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
 	  } else {
 	  	 console.log("LOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKK");
 	    console.log(res.rows[0])
