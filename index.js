@@ -48,7 +48,7 @@ function registerUser(req,respond){
 
 
 	// callback
-	client.query(query, (err, res) => {
+	pool.query(query, (err, res) => {
 	  if (err) {
 	    console.log(err.stack)
 	  } else {
