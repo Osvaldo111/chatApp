@@ -38,6 +38,25 @@ function registerUser(req,respond){
 	  
 	})
 
+	// Query
+	const query = {
+	  // give the query a unique name
+	  name: 'fetch-user',
+	  text: 'SELECT * FROM user WHERE id = $1',
+	  values: [1]
+	}
+
+
+	// callback
+	client.query(query, (err, res) => {
+	  if (err) {
+	    console.log(err.stack)
+	  } else {
+	  	 console.log("LOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKK");
+	    console.log(res.rows[0])
+	  }
+	})
+
 
 
 }
