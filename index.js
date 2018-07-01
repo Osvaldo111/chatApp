@@ -15,6 +15,7 @@ express()
   .get('/', function(req, res){
 
 	res.render('pages/index');
+	registerUser(req, res);
 
 
 
