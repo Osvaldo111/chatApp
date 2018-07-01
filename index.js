@@ -27,6 +27,10 @@ express()
 	// Call the function to inser the user
     registerUser(req, res);
   })
+   .post('/chat',function(req,res){
+
+
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 /*This function is designed to register the user
