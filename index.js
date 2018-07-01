@@ -21,49 +21,22 @@ express()
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+/*This function is designed to register the user
+ into the database*/
+function registerUser(req,respond){
 
-function connection(req,respond){
 
-	var id_Person = req.body.number;
+	const { Pool} = require('pg')
+	const connectionString = process.env.DATABASE_URL;
 
-	var params = null;
-
-	  const pool = new Pool({
-	  connectionString: connectionString,
+	const pool = new Pool({
+ 	 connectionString: connectionString,
 	})
 
-    const client = new Client({
-  		connectionString: connectionString,
+	pool.query('SELECT NOW()', (err, res) => {
+	  console.log(err, res)
+	  
 	})
-	client.connect()
-
-
-	const query = {
-	  // give the query a unique name
-	  name: 'fetch-user',
-	  text: 'SELECT * FROM parents WHERE id = $1',
-	  values: [id_Person]
-	}
-
-	// callback
-	client.query(query, (err, res) => {
-	  if (err) {
-	    console.log(err.stack)
-	  } else {
-	    console.log(res.rows[0].firstname),
-	    console.log('THIS IS PERSON ROWWWWWWWWWWWWWWW***************************'),
-	    console.log(id_Person)
-	    
-
-	    var firstName = res.rows[0].firstname;
-	    var lastName = res.rows[0].lastname;
-	    var dateBirth = res.rows[0].datebirth;
-
-	    params = {firstName : firstName, lastName: lastName, dateBirth : dateBirth};
-	    respond.render('pages/result', params);
-	  }
-	})
-    //res.render('pages/result', params)
 
 
 
