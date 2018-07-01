@@ -20,7 +20,7 @@ express()
   })
   .post('/welcome',function(req,res){
 
-	res.render('pages/index');
+	res.render('pages/welcome');
 	console.log(req.body.userName);
 	console.log(req.body.userPassword);
 
