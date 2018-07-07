@@ -31,7 +31,7 @@ pool.query(queryFindUser, (err, res) => {
   // in the database 
   else if (res.row[0].user_name != userName){
     
-	pool.query(query, (err, res) => {
+	pool.query(queryinsertUser, (err, res) => {
 	  if (err) {
 	    console.log(err.stack)
 	  } else {
