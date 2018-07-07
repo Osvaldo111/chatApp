@@ -1,18 +1,12 @@
+/*This function is designed to register the user
+ into the database*/
 module.exports = {
 
 
-	registerUser: function(req, repond){
+	registerUser: function(req, repond, pool){
 
 	var userName = req.body.userName;
 	var userPassword = req.body.userPassword;
-
-
-	const { Pool} = require('pg')
-	const connectionString = process.env.DATABASE_URL;
-
-	const pool = new Pool({
- 	 connectionString: connectionString,
-	})
 
 
 // Insert the user into the database

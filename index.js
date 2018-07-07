@@ -3,12 +3,20 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 
 
+
+
+// Initialize the pool
+const { Pool} = require('pg')
+//Connection with the Heroku database.
+const connectionString = process.env.DATABASE_URL;
+//Create the "pool" object
+const pool = new Pool({
+ 	connectionString: connectionString,
+})
+
 // Register a User
 var registerUser = require("./register.js");
 
-
-const { Pool} = require('pg')
-const connectionString = 'postgres://sedeggwijpebdf:b308fcb24aa52b76b98e51ba0456d02926573d5393e1f8edd111045d4e937968@ec2-54-243-61-173.compute-1.amazonaws.com:5432/d7enbr73t7iv7u'
 
 // In order to use JSON 
 var bodyParser = require('body-parser');
@@ -24,7 +32,7 @@ express()
 
 
   })
-  .post('/welcome',function(req,res){
+  .post('/welcome',function(req,res, pool){
 
 	res.render('pages/welcome');
 	console.log(req.body.userName);
@@ -41,9 +49,6 @@ express()
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-/*This function is designed to register the user
- into the database*/
-function registerUser(req,respond){
 
 
 
@@ -69,6 +74,5 @@ function registerUser(req,respond){
 */
 
 
-}
 
 
