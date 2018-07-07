@@ -23,26 +23,22 @@ const queryinsertUser = {
 
 // callback
 pool.query(queryFindUser, (err, res) => {
-  // check for any unexpected error
+  // 
   if (err) {
     console.log(err.stack, "VALUE NOT FOUND")
+
+		pool.query(queryinsertUser, (err, res) => {
+		  if (err) {
+		    console.log(err.stack)
+		  } else {
+		    console.log(res.rows[0])
+		  }
+		})
+
+  } else {
+    console.log(res.rows[0])
   }
-  // Check if the name not match in order to insert it
-  // in the database 
-  else if (res.row[0].user_name != userName){
-    
-	pool.query(queryinsertUser, (err, res) => {
-	  if (err) {
-	    console.log(err.stack)
-	  } else {
-	    console.log(res.rows[0])
-	  }
-	})
-  
-  }//else
 })
-
-
 // callback
 
 
