@@ -12,7 +12,7 @@ module.exports = {
 const queryFindUser = {
   // give the query a unique name
   name: 'fetch-user',
-  text: 'SELECT * FROM users WHERE user_name = $1',
+  text: 'SELECT * FROM users WHERE user_name != $1',
   values: [userName]
 }
 
@@ -27,20 +27,21 @@ pool.query(queryFindUser, (err, res) => {
   if (err) {
     console.log(err.stack, "VALUE NOT FOUND")
 
-		pool.query(queryinsertUser, (err, res) => {
-		  if (err) {
-		    console.log(err.stack)
-		  } else {
-		    console.log(res.rows[0])
-		  }
-		})
 
   } else {
     console.log(res.rows[0])
   }
 })
-// callback
 
+
+// callback
+pool.query(query, (err, res) => {
+  if (err) {
+    console.log(err.stack)
+  } else {
+    console.log(res.rows[0])
+  }
+})
 
 
 
