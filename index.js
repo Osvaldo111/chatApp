@@ -32,7 +32,7 @@ express()
 
 
   })
-  .post('/welcome',function(req,res, pool){
+  .post('/welcome',function(req,res){
 
 	res.render('pages/welcome');
 	console.log(req.body.userName);
@@ -41,7 +41,7 @@ express()
 	// Call the function to inser the user
    // registerUser(req, res);
 
-   registerUser.registerUser(req, res);
+   registerUser.registerUser(req, res, pool);
   })
    .post('/chat',function(req,res){
 
