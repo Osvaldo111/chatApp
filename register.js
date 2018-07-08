@@ -12,12 +12,12 @@ module.exports = {
 const queryFindUser = {
   // give the query a unique name
   name: 'fetch-user',
-  text: 'SELECT * FROM users WHERE user_name != $name',
+  text: 'SELECT * FROM users WHERE user_name = $1',
   values: [userName]
 }
 
 const queryInsertUser = {
-  text: 'INSERT INTO users(user_name, password) VALUES($name, $password)',
+  text: 'INSERT INTO users(user_name, password) VALUES($1, $2)',
   values: [userName, userPassword],
 }
 
