@@ -40,11 +40,22 @@ pool.query(queryFindUser, (err, res) => {
         console.log(res.rows[0])
       }
     })
+  } else{
+       alert('You did did');
   }
 })
 
 	}
 
 };
+
+function nameTake(flag){
+
+  if(flag == true)
+  {
+
+  }
+
+}
 
 
