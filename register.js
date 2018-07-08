@@ -14,7 +14,7 @@ module.exports = {
 const queryFindUser = {
   // give the query a unique name
   name: 'fetch-user',
-  text: 'SELECT * FROM users WHERE user_name = $1',
+  text: 'SELECT * FROM users WHERE user_nme = $1',
   values: [userName]
 }
 
