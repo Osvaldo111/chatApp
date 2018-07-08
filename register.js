@@ -35,17 +35,20 @@ pool.query(queryFindUser, (err, res, flag) => {
       console.log(res.rows[0].exists, "THIS IS THE PERSON")
 
 
-          //Insert the user in the database.
+/*          //Insert the user in the database.
     pool.query(queryInsertUser, (err, res) => {
       if (err) {
         console.log(err.stack)
       } else {
         console.log(res.rows[0])
       }
-    })
+    })*/
+
+
   } else if(res.rows[0].exists == true){
+
      var flag = res.rows[0].exists;
-     return flag;
+     
      console.log("THE FLAG THAT I WANT IT", flag);
   }
 
