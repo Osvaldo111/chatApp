@@ -46,7 +46,7 @@ express()
   	console.log("THE NEW CALLBACK", flag);
   });
 
-   console.log("THIS IS THE RETURN VALUE", flag);
+   //console.log("THIS IS THE RETURN VALUE", flag);
  
 
   })

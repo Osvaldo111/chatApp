@@ -28,7 +28,7 @@ var flag = null;
 
 // Find if the user is in the database. Otherwise 
 // insert the new user.
-pool.query(queryFindUser, (err, res, flag, callback) => {
+pool.query(queryFindUser, (err, res, flag, callback(flag)) => {
   if (err) {
     console.log(err.stack, "This is an error")
   } else if(res.rows[0].exists == false){
