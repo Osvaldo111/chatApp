@@ -28,7 +28,7 @@ const queryInsertUser = {
 
 // Find if the user is in the database. Otherwise 
 // insert the new user.
-pool.query(queryFindUser, (err, res, flag) => {
+var funct = pool.query(queryFindUser, (err, res, flag) => {
   if (err) {
     console.log(err.stack, "This is an error")
   } else if(res.rows[0].exists == false){
@@ -48,6 +48,11 @@ pool.query(queryFindUser, (err, res, flag) => {
     return flag;
   }
 })
+
+
+
+return funct;
+conosole.log("THIS IS THE FUCNTION", funct);
 
 
 
