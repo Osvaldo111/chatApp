@@ -41,7 +41,7 @@ pool.query(queryFindUser, (err, res) => {
       }
     })
   } else{
-       alert('You did did');
+      nameTake();
   }
 })
 
@@ -49,11 +49,11 @@ pool.query(queryFindUser, (err, res) => {
 
 };
 
-function nameTake(flag){
+function nameTake(){
 
   if(flag == true)
   {
-
+    alert('You did did');
   }
 
 }
