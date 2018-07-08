@@ -28,16 +28,8 @@ const queryInsertUser = {
 pool.query(queryFindUser, (err, res) => {
   if (err) {
     console.log(err.stack, "This is an error")
-  } else if(res.rows[0] == false){
-      console.log(res.rows[0], "THIS IS THE PERSON")
-          //Insert the user in the database.
-    pool.query(queryInsertUser, (err, res) => {
-      if (err) {
-        console.log(err.stack)
-      } else {
-        console.log(res.rows[0])
-      }
-    })
+  } else {
+      console.log(res.rows[0].exists, "THIS IS THE PERSON")
   }
 })
 
@@ -46,3 +38,11 @@ pool.query(queryFindUser, (err, res) => {
 };
 
 
+    // //Insert the user in the database.
+    // pool.query(queryInsertUser, (err, res) => {
+    //   if (err) {
+    //     console.log(err.stack)
+    //   } else {
+    //     console.log(res.rows[0])
+    //   }
+    // })
