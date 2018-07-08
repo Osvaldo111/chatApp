@@ -51,11 +51,9 @@ pool.query(queryFindUser, (err, res) => {
 
 function nameTake(){
 
-  if(flag == true)
-  {
-    alert('You did did');
-  }
 
+    alert('You did did');
+ 
 }
 
 
