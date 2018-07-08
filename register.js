@@ -43,7 +43,7 @@ pool.query(queryFindUser, (err, res, flag) => {
         console.log(res.rows[0])
       }
     })
-  } else{
+  } else if(res.rows[0].exists == true){
      var flag = res.rows[0].exists;
      return flag;
      console.log("THE FLAG THAT I WANT IT", flag);
