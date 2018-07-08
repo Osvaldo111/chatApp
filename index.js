@@ -29,7 +29,10 @@ express()
   .get('/', function(req, res){
 
 	res.render('pages/index');
+		// Call the function to inser the user
+   // registerUser(req, res);
 
+   registerUser.registerUser(req, res, pool);
 
   })
   .post('/welcome',function(req,res){
@@ -38,10 +41,7 @@ express()
 	console.log(req.body.userName);
 	console.log(req.body.userPassword);
 
-	// Call the function to inser the user
-   // registerUser(req, res);
 
-   registerUser.registerUser(req, res, pool);
   })
    .post('/chat',function(req,res){
 
