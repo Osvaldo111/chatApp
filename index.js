@@ -44,6 +44,7 @@ express()
    var flag = registerUser.registerUser(req, res, pool);
 
    console.log("THIS IS THE RETURN VALUE", flag);
+   
   })
    .post('/chat',function(req,res){
 

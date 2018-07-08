@@ -45,12 +45,13 @@ pool.query(queryFindUser, (err, res) => {
     })
   } else{
     flag = res.rows[0].exists;
+    return flag;
   }
 })
 
 
 
-return flag;
+
 	}
 
 };
