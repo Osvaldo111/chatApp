@@ -41,10 +41,10 @@ express()
 	// Call the function to inser the user
    // registerUser(req, res);
 
-  registerUser.registerUser(req, res, pool, function(flag)){
+  registerUser.registerUser(req, res, pool, function(flag){
 
   	console.log("THE NEW CALLBACK", flag);
-  }
+  });
 
    console.log("THIS IS THE RETURN VALUE", flag);
  
