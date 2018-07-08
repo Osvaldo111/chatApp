@@ -47,6 +47,7 @@ pool.query(queryFindUser, (err, res) => {
   } else{
 
     flag = res.rows[0].exists;
+    console.log("THIIs IS THE LAST ELSE");
       
   }
 })
