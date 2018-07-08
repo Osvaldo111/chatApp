@@ -38,11 +38,11 @@ pool.query(queryFindUser, (err, res) => {
 };
 
 
-    //Insert the user in the database.
-    pool.query(queryInsertUser, (err, res) => {
-      if (err) {
-        console.log(err.stack)
-      } else {
-        console.log(res.rows[0])
-      }
-    })
+    // //Insert the user in the database.
+    // pool.query(queryInsertUser, (err, res) => {
+    //   if (err) {
+    //     console.log(err.stack)
+    //   } else {
+    //     console.log(res.rows[0])
+    //   }
+    // })
