@@ -49,7 +49,7 @@ pool.query(queryFindUser, (err, res, flag) => {
      console.log("THE FLAG THAT I WANT IT", flag);
   }
 
-  return 100;
+
 })
 
 	}
