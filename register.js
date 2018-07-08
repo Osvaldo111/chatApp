@@ -24,6 +24,8 @@ const queryInsertUser = {
 }
 
 
+// A flag to show the user if the name is taken or
+// if the password is incorrect.
 var flag = null;
 
 // Find if the user is in the database. Otherwise 
@@ -32,10 +34,12 @@ pool.query(queryFindUser, (err, res, flag) => {
   if (err) {
     console.log(err.stack, "This is an error")
   } else if(res.rows[0].exists == false){
-      console.log(res.rows[0].exists, "THIS IS THE PERSON")
 
+    // Assign a value to the flag
+    flag = res.rows[0].exists;
 
-          //Insert the user in the database.
+    console.log(res.rows[0].exists, "Just a hint")
+    //If the user doesn't exist, insert it in the database.
     pool.query(queryInsertUser, (err, res) => {
       if (err) {
         console.log(err.stack)
@@ -44,15 +48,16 @@ pool.query(queryFindUser, (err, res, flag) => {
       }
     })
 
-
   } else if(res.rows[0].exists == true){
 
+    // Assign a value to the flag.
      flag = res.rows[0].exists;
      console.log("THE FLAG THAT I WANT IT", flag);
 
      
   }
 
+  // Use the callback to get the value of the flag.
   callback(flag);
 })
 

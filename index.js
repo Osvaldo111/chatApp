@@ -39,11 +39,12 @@ express()
 	console.log(req.body.userPassword);
 
 	// Call the function to inser the user
-   // registerUser(req, res);
-
   registerUser.registerUser(req, res, pool, function(flag){
 
   	console.log("THE NEW CALLBACK", flag);
+  	if (flag == true) {
+  		nameTake();
+  	}
   });
 
    //console.log("THIS IS THE RETURN VALUE", flag);
