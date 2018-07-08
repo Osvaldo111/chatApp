@@ -7,6 +7,8 @@ module.exports = {
 
 	var userName = req.body.userName;
 	var userPassword = req.body.userPassword;
+  console.log(userName, "THIS IS THE USERNAME");
+
 
 // Query to verify if the user exists on the database
 const queryFindUser = {
@@ -27,7 +29,15 @@ pool.query(queryFindUser, (err, res) => {
   if (err) {
     console.log(err.stack, "This is an error")
   } else {
-    
+      console.log(res.rows[0], "THIS IS THE PERSON")
+  }
+})
+
+	}
+
+};
+
+
     //Insert the user in the database.
     pool.query(queryInsertUser, (err, res) => {
       if (err) {
@@ -36,9 +46,3 @@ pool.query(queryFindUser, (err, res) => {
         console.log(res.rows[0])
       }
     })
-  }
-})
-
-	}
-
-};
