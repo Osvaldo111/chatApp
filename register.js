@@ -28,7 +28,7 @@ const queryInsertUser = {
 pool.query(queryFindUser, (err, res) => {
   if (err) {
     console.log(err.stack, "This is an error")
-  } else if(res.row[0].exists == false){
+  } else if(res.rows[0].exists == false){
       console.log(res.rows[0].exists, "THIS IS THE PERSON")
   }
 })
