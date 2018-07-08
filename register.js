@@ -44,9 +44,11 @@ var funct = pool.query(queryFindUser, (err, res, flag) => {
       }
     })
   } else{
-    var flag = res.rows[0].exists;
-    return flag;
+    // var flag = res.rows[0].exists;
+    // return flag;
   }
+
+  return 100;
 })
 
 
