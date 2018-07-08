@@ -12,38 +12,32 @@ module.exports = {
 const queryFindUser = {
   // give the query a unique name
   name: 'fetch-user',
-  text: 'SELECT * FROM users WHERE user_name != $1',
+  text: 'SELECT * FROM users WHERE user_name != $name',
   values: [userName]
 }
 
-const queryinsertUser = {
-  text: 'INSERT INTO users(user_name, password) VALUES($1, $2)',
+const queryInsertUser = {
+  text: 'INSERT INTO users(user_name, password) VALUES($name, $password)',
   values: [userName, userPassword],
 }
 
-// callback
+// Find if the user is in the database. Otherwise 
+// insert the new user.
 pool.query(queryFindUser, (err, res) => {
-  // 
   if (err) {
-    console.log(err.stack, "VALUE NOT FOUND")
-
-
+    console.log(err.stack, "This is an error")
   } else {
-    console.log(res.rows[0])
+    
+    //Insert the user in the database.
+    pool.query(queryInsertUser, (err, res) => {
+      if (err) {
+        console.log(err.stack)
+      } else {
+        console.log(res.rows[0])
+      }
+    })
   }
 })
-
-
-// callback
-pool.query(query, (err, res) => {
-  if (err) {
-    console.log(err.stack)
-  } else {
-    console.log(res.rows[0])
-  }
-})
-
-
 
 	}
 
