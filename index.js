@@ -41,16 +41,10 @@ express()
 	// Call the function to inser the user
    // registerUser(req, res);
 
-   var flaggy = null;
-   var flag = function (registerUser){
-
-   	return(registerUser.registerUser(req, res, pool, flaggy));
-
-   	
-   }
+  var flag = registerUser.registerUser(req, res, pool);
 
    console.log("THIS IS THE RETURN VALUE", flag);
-   console.log("THE WEIRD PART OF NODE", flag);
+ 
 
   })
    .post('/chat',function(req,res){

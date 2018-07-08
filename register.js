@@ -3,7 +3,7 @@
 module.exports = {
 
 
-	registerUser: function(req, repond, pool, flag){
+	registerUser: function(req, repond, pool){
 
 	var userName = req.body.userName;
 	var userPassword = req.body.userPassword;
@@ -44,11 +44,10 @@ pool.query(queryFindUser, (err, res, flag) => {
       }
     })
   } else{
-    flag = res.rows[0].exists;
+    var flag = res.rows[0].exists;
     return flag;
   }
 })
-
 
 
 
