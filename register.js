@@ -50,24 +50,10 @@ pool.query(queryFindUser, (err, res) => {
     console.log("THIIs IS THE LAST ELSE", flag);
       
   }
-}
+})
 
-  nameTake();
-)
-
-console.log(flag, "THIS IS THE FLAG");
-if (flag == true) { nameTake();}
-
-
-	}
-
+return flag;
 };
 
-function nameTake(){
-
-
-    alert('You did did');
- 
-}
 
 

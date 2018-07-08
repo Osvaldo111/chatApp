@@ -41,7 +41,9 @@ express()
 	// Call the function to inser the user
    // registerUser(req, res);
 
-   registerUser.registerUser(req, res, pool);
+   var flag = registerUser.registerUser(req, res, pool);
+
+   console.log("THIS IS THE RETURN VALUE", flag);
   })
    .post('/chat',function(req,res){
 
@@ -49,7 +51,12 @@ express()
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+function nameTake(){
 
+
+    alert('You did did');
+ 
+}
 
 
 
