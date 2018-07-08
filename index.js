@@ -42,7 +42,7 @@ express()
    // registerUser(req, res);
 
    var flaggy = null;
-   var flag = function (registerUser(req, res, pool,flaggy)){
+   var flag = function (registerUser){
 
    	return(registerUser.registerUser(req, res, pool, flaggy));
 
