@@ -23,6 +23,9 @@ const queryInsertUser = {
   values: [userName, userPassword],
 }
 
+
+var flag = null;
+
 // Find if the user is in the database. Otherwise 
 // insert the new user.
 pool.query(queryFindUser, (err, res) => {
@@ -40,9 +43,14 @@ pool.query(queryFindUser, (err, res) => {
         console.log(res.rows[0])
       }
     })
+  } else{
+    flag = res.rows[0].exists;
   }
 })
 
+
+
+return flag;
 	}
 
 };
