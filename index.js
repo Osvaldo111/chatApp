@@ -44,9 +44,10 @@ express()
   	console.log("THE NEW CALLBACK", flag);
 
 // pass a local variable to the view
-res.render('pages/index', { name: 'Tobi' }, function(err, html) {
+var params ={ name: 'Tobi' };
+res.render('pages/index', params, function(err, html) {
   // ...
-  console.log("LOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKK", name);
+  console.log("LOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKK", params);
 
 });
   	
