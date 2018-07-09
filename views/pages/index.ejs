@@ -7,6 +7,29 @@
 <body>
 
   <% include ../partials/nav.ejs %>
+
+
+  <script type="text/javascript">
+    function search(){
+
+    $(document).ready(function(){
+    $("button").click(function(){
+
+      alert("THe first one");
+
+      console.log("THE First inside cliente side.");
+        $.get("https://connect-chat.herokuapp.com/welcome", function(data, status){
+            
+            console.log(data, "The data client side");
+            alert("THe secodn");
+            // Update the parameters automatically. 
+            
+
+            });
+        });
+    });
+  }
+</script>
 <!-- Material form login -->
 
 <div class="bgimg">
@@ -60,25 +83,5 @@
 
 
 </body>
-<script type="text/javascript">
-    function search(){
 
-    $(document).ready(function(){
-    $("button").click(function(){
-
-      alert("THe first one");
-
-      console.log("THE First inside cliente side.");
-        $.get("https://connect-chat.herokuapp.com/welcome", function(data, status){
-            
-            console.log(data, "The data client side");
-            alert("THe secodn");
-            // Update the parameters automatically. 
-            
-
-            });
-        });
-    });
-  }
-</script>
 </html>
