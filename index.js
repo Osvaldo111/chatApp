@@ -31,6 +31,10 @@ express()
 	res.render('pages/index');
 
 
+  })
+  .get('/ajaxCall', function(req, res){
+
+
 	var data = {
 		name : "join"
 	};
