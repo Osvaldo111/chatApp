@@ -43,12 +43,12 @@ express()
 
   	console.log("THE NEW CALLBACK", flag);
 
-		  	// if a callback is specified, the rendered HTML string has to be sent explicitly
-		res.render('pages/index', function(err, html) {
-		  res.send(flag);
-		  //console.log(html, "INSIDE 1");
-		  console.log(flag, "INSIDE 2");
-		});
+// pass a local variable to the view
+res.render('pages/index', { name: 'Tobi' }, function(err, html) {
+  // ...
+  console.log("LOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKK", name);
+
+});
   	
   });
 
