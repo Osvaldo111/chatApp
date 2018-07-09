@@ -29,20 +29,21 @@ express()
   .get('/', function(req, res){
 
 	res.render('pages/index');
-	console.log(req.params.userName);
-	console.log(req.params.userPassword);
 
-	// Call the function to inser the user
-    registerUser.registerUser(req, res, pool, function(flag){
-
-  	console.log("THE NEW CALLBACK", flag);
-  	res.send(flag);
 
   })
   .post('/welcome',function(req,res){
 
-	//res.render('pages/');
+	
+	console.log(req.body.userName);
+	console.log(req.body.userPassword);
 
+	// Call the function to inser the user
+  registerUser.registerUser(req, res, pool, function(flag){
+
+  	console.log("THE NEW CALLBACK", flag);
+  	res.send(flag);
+  	res.render('pages/index');
  
   });
 
