@@ -16,26 +16,23 @@ $(document).ready(function(){
               success: function(data){
                   console.log(data);
                   alert(data);
+                  ad(data);
               }
           });
           e.preventDefault();
 
           //Get the values
-          ad();
+          
   });
 });
 
 
-function ad()
+function ad(flag)
 {
-      $.post('https://connect-chat.herokuapp.com/welcome', function(data, status){
-        
-        console.log(data, "NEW DATA GET bJQUEUUE");
+   
 
         // Update the parameters automatically. 
         if (data == "true") { alert("TRUE");}
-
-        });
 }
 </script>
 </head>
