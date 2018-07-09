@@ -59,7 +59,7 @@ var params ={ name: 'Tobi' };
 
 //res.send(params);
 
-res.render('pages/welcome', params);
+//res.render('pages/welcome', params);
   	
   });
 
