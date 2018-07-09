@@ -13,8 +13,8 @@
     function search(){
 
     $(document).ready(function(){
-    $("button").click(function(){
-
+    $("#button").click(function(){
+        alert("THe one");
         $.get("https://connect-chat.herokuapp.com/welcome", function(data, status){
             
             console.log(data, "The data client side");
@@ -49,7 +49,7 @@
     <input type="password" id="defaultFormLoginPasswordEx" class="form-control" name="userPassword" required>
 
     <div class="text-center mt-4">
-        <button class="btn btn-indigo" onclick="search()" type="button">Login</button>
+        <button class="btn btn-indigo" onclick="search()" id="button">Login</button>
     </div>
            <div class="form-group">
           <div class="col-md-12 control">
