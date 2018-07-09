@@ -31,6 +31,13 @@ express()
 	res.render('pages/index');
 
 
+	var data = {
+		name : "join"
+	};
+
+	res.send(data);
+
+
   })
   .post('/welcome',function(req,res){
 
