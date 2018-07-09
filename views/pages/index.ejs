@@ -2,34 +2,27 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-</head>
-
-<body>
-
-  <% include ../partials/nav.ejs %>
-
-
-  <script type="text/javascript">
+    <script type="text/javascript">
 
 
 
     function ad(){
 
-          // Use jQuery to make the get request
-  $.post("https://connect-chat.herokuapp.com/welcome", function(data, status){
 
-    alert("THe one");
-    // For debugging purposes, make a note that we're back
-    console.log("Back from server with the following results:")
-    
-      console.log(data);
-   
-  });
+ alert("Some alert");
 
 
     }
   
 </script>
+</head>
+
+<body onload="ad()">
+
+  <% include ../partials/nav.ejs %>
+
+
+
 <!-- Material form login -->
 
 <div class="bgimg">
