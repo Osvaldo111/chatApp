@@ -57,7 +57,9 @@ express()
 // pass a local variable to the view
 var params ={ name: 'Tobi' };
 
-res.send(params);
+//res.send(params);
+
+res.render('pages/welcome', params);
   	
   });
 
