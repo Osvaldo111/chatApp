@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+var JSAlert = require("js-alert")
 const PORT = process.env.PORT || 5000
 
 
@@ -60,7 +61,8 @@ express()
 function nameTake(){
 
 
-    alert('You did did');
+    // Show a plain alert
+JSAlert.alert("This is an alert.");
  
 }
 
