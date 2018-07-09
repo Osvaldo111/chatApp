@@ -43,11 +43,11 @@ express()
 
 
   })
-  .get('/welcome',function(req,res){
+  .post('/welcome',function(req,res){
 
 	
-	console.log(req.params.userName);
-	console.log(req.params.userPassword);
+	console.log(req.body.userName);
+	console.log(req.body.userPassword);
 
 	// Call the function to inser the user
   registerUser.registerUser(req, res, pool, function(flag){
