@@ -39,14 +39,15 @@ express()
 	console.log(req.body.userPassword);
 
 	// Call the function to inser the user
-  registerUser.registerUser(req, res, pool, function(flag){
+  var flag = registerUser.registerUser(req, res, pool, function(flag){
 
   	console.log("THE NEW CALLBACK", flag);
-  	res.render('pages/index');
- 
-  	res.send(flag);
+
+  	return flag;
   	
   });
+
+  console.log('THis  is the oother flag', flag);
 
    //console.log("THIS IS THE RETURN VALUE", flag);
  
