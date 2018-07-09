@@ -50,13 +50,13 @@ express()
 	console.log(req.body.userPassword);
 
 	// Call the function to inser the user
-  registerUser.registerUser(req, res, pool, function(flag){
+    registerUser.registerUser(req, res, pool, function(flag){
 
   	console.log("THE NEW CALLBACK", flag);
 
 // pass a local variable to the view
 var params ={ name: 'Tobi' };
-
+res.send(flag);
 //res.send(params);
 
 //res.render('pages/welcome', params);
