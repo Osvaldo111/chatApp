@@ -48,6 +48,7 @@ var params ={ name: 'Tobi' };
 res.render('pages/index', params, function(err, html) {
   // ...
   console.log("LOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKK", params);
+  res.send(html);
 
 });
   	
