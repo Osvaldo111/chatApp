@@ -7,22 +7,22 @@
 
 $(document).ready(function(){
   $('#eventForm').submit(function (e) {
-          e.preventDefault();
-          var fd = new FormData($(this)[0]);
+          
+          
           $.ajax({
               url: '/welcome',
-              data: fd,
+              data:  $("#eventForm").serialize(),
               processData: false,
               contentType: false,
               type: 'POST',
               success: function(data){
                   console.log(data);
+                  alert(data);
               }
           });
+          e.preventDefault();
   });
 });
-
-  
 </script>
 </head>
 
