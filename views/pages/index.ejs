@@ -13,7 +13,7 @@
 
 
     $(document).ready(function(){
-    $("#button2").click(function(){
+    $("#button").click(function(event){
         alert("THe one");
 
           // Use jQuery to make the get request
@@ -22,6 +22,7 @@
     console.log("Back from server with the following results:")
     
       console.log(data);
+      event.preventDefault();
    
   });
 
