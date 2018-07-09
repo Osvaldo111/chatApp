@@ -26,7 +26,7 @@ express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', function(req, res){
+  .post('/', function(req, res){
 
 	res.render('pages/index');
 
