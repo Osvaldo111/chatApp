@@ -32,7 +32,7 @@ express()
 
 
   })
-  .post('/welcome',function(req,res){
+  .post('/',function(req,res){
 
 	//res.render('pages/index');
 	console.log(req.body.userName);
