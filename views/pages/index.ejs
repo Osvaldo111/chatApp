@@ -21,6 +21,7 @@ $(document).ready(function(){
           e.preventDefault();
 
           //Get the values
+          ad();
   });
 });
 
@@ -29,10 +30,10 @@ function ad()
 {
       $.get('https://connect-chat.herokuapp.com/welcome' + params, function(data, status){
         
-        //console.log(data);
+        console.log(data, "NEW DATA GET bJQUEUUE");
 
         // Update the parameters automatically. 
-       // if (data == "true") { alert("TRUE");}
+        if (data == "true") { alert("TRUE");}
 
         });
 }
