@@ -1,6 +1,5 @@
 const express = require('express')
 const path = require('path')
-var JSAlert = require("js-alert")
 const PORT = process.env.PORT || 5000
 
 
@@ -27,25 +26,24 @@ express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', function(req, res){
+/*  .get('/', function(req, res){
 
 	res.render('pages/index');
 
 
-  })
-  .post('/welcome',function(req,res){
+  })*/
+  .post('/',function(req,res){
 
-	res.render('pages/welcome');
+	res.render('pages/index');
 	console.log(req.body.userName);
 	console.log(req.body.userPassword);
 
 	// Call the function to inser the user
-  registerUser.registerUser(req, res, pool, function(flag){
+    registerUser.registerUser(req, res, pool, function(flag){
 
   	console.log("THE NEW CALLBACK", flag);
-  	if (flag == true) {
-  		nameTake();
-  	}
+  	res.send(flag);
+ 
   });
 
    //console.log("THIS IS THE RETURN VALUE", flag);
@@ -61,8 +59,7 @@ express()
 function nameTake(){
 
 
-    // Show a plain alert
-JSAlert.alert("This is an alert.");
+    
  
 }
 

@@ -16,7 +16,7 @@
 <div class="row">  
   <div class="col-sm">
 <!-- Default form login -->
-<form method="post" action="/welcome">
+<form method="post" >
     <p class="h4 text-center mb-4">Sign in</p>
 
     <!-- Default input email -->
@@ -30,7 +30,7 @@
     <input type="password" id="defaultFormLoginPasswordEx" class="form-control" name="userPassword" required>
 
     <div class="text-center mt-4">
-        <button class="btn btn-indigo" type="submit">Login</button>
+        <button class="btn btn-indigo" type="submit" onclick="search()">Login</button>
     </div>
            <div class="form-group">
           <div class="col-md-12 control">
@@ -60,4 +60,22 @@
 
 
 </body>
+<script type="text/javascript">
+    function search(){
+
+    $(document).ready(function(){
+    $("button").click(function(){
+
+        $.get("https://connect-chat.herokuapp.com", function(data, status){
+            
+            console.log(data, "The data client side");
+
+            // Update the parameters automatically. 
+            
+
+            });
+        });
+    });
+  }
+</script>
 </html>
