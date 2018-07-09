@@ -42,9 +42,10 @@ express()
   registerUser.registerUser(req, res, pool, function(flag){
 
   	console.log("THE NEW CALLBACK", flag);
-  	res.send(flag);
   	res.render('pages/index');
  
+  	res.send(flag);
+  	
   });
 
    //console.log("THIS IS THE RETURN VALUE", flag);
