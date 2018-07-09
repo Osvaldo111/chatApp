@@ -45,7 +45,7 @@ express()
 
 		  	// if a callback is specified, the rendered HTML string has to be sent explicitly
 		res.render('pages/index', function(err, html) {
-		  res.send(html);
+		  res.send(flag);
 		  //console.log(html, "INSIDE 1");
 		  console.log(flag, "INSIDE 2");
 		});
