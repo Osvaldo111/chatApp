@@ -7,14 +7,12 @@
 
 $(document).ready(function(){
   $('#eventForm').submit(function (e) {
-          
+          alert("TOUCHED");
           
           $.ajax({
+              type: 'POST',
               url: '/welcome',
               data:  $("#eventForm").serialize(),
-              processData: false,
-              contentType: false,
-              type: 'POST',
               success: function(data){
                   console.log(data);
                   alert(data);
