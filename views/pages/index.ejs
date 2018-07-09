@@ -6,19 +6,20 @@
 
 
 
-    function ad(){
-
-var myBar = "<%= firstN %>";
-
-if (typeof myBar !== 'undefined'){
-alert("Some alert");
-
-}
-
- 
-
-
-    }
+$('#eventForm').submit(function (e) {
+        e.preventDefault();
+        var fd = new FormData($(this)[0]);
+        $.ajax({
+            url: '/welcome',
+            data: fd,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(data){
+                console.log(data);
+            }
+        });
+});
   
 </script>
 </head>
@@ -38,7 +39,7 @@ alert("Some alert");
 <div class="row">  
   <div class="col-sm">
 <!-- Default form login -->
-<form method="post" id="login" action="/welcome">
+<form method="post" id="login" action="/welcome" onsubmit="ad()" id="eventForm">
     <p class="h4 text-center mb-4">Sign in</p>
 
     <!-- Default input email -->
