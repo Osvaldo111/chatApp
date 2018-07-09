@@ -15,16 +15,12 @@
     $(document).ready(function(){
     $("button").click(function(){
 
-      alert("THe first one");
-
-      console.log("THE First inside cliente side.");
         $.get("https://connect-chat.herokuapp.com/welcome", function(data, status){
             
             console.log(data, "The data client side");
             alert("THe secodn");
             // Update the parameters automatically. 
-            
-
+          
             });
         });
     });
