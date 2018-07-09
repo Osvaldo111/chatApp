@@ -15,14 +15,14 @@
     $(document).ready(function(){
     $("#button").click(function(event){
         alert("THe one");
+      event.preventDefault();
 
-          // Use jQuery to make the get request
+    // Use jQuery to make the get request
   $.get("https://connect-chat.herokuapp.com/ajaxCall", function(data, status){
     // For debugging purposes, make a note that we're back
     console.log("Back from server with the following results:")
     
       console.log(data);
-      event.preventDefault();
    
   });
 
