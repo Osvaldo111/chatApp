@@ -13,7 +13,7 @@
     function search(){
 
     $(document).ready(function(){
-    $("#button").submit(function(){
+    $("#login").submit(function(){
         alert("THe one");
 
         });
@@ -29,7 +29,7 @@
 <div class="row">  
   <div class="col-sm">
 <!-- Default form login -->
-<form method="post" action="/welcome" onsubmit="search()">
+<form method="post" action="/welcome" onsubmit="search()" id="login">
     <p class="h4 text-center mb-4">Sign in</p>
 
     <!-- Default input email -->
