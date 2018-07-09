@@ -16,6 +16,16 @@
     $("#login").submit(function(){
         alert("THe one");
 
+          // Use jQuery to make the get request
+  $.get("https://connect-chat.herokuapp.com/welcome", function(data, status){
+    // For debugging purposes, make a note that we're back
+    console.log("Back from server with the following results:")
+    
+      console.log(data);
+ alert("Inside");
+   
+  });
+
         });
     });
   
@@ -29,7 +39,7 @@
 <div class="row">  
   <div class="col-sm">
 <!-- Default form login -->
-<form method="post" action="/welcome" onsubmit="search()" id="login">
+<form method="post" action="/welcome" id="login">
     <p class="h4 text-center mb-4">Sign in</p>
 
     <!-- Default input email -->
