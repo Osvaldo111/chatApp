@@ -19,9 +19,9 @@ $(document).ready(function(){
               success: function(data){
                   console.log(data);
                   // The function to give a hint to the user
-                  alert(data);
+                 // alert(data);
                   hint(data.flag);
-                  //window.location.replace("/welcome2");
+                  window.location.replace(data.redirect);
               }
           });
           // Prevent the usual submit of the form by the "submit" button.
