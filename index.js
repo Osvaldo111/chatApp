@@ -15,9 +15,7 @@ const pool = new Pool({
 // Module to register a User
 var registerUser = require("./register.js");
 
-// Variables needed to use Socket.io
-var http = require('http').Server(app)
-var io = require('socket.io')(http)
+
 
 // In order to use JSON 
 var bodyParser = require('body-parser');
@@ -66,11 +64,7 @@ app
   });
 
 
-   io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+
   http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
