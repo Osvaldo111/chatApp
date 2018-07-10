@@ -32,35 +32,20 @@ express()
 
 
   })
-  .get('/ajaxCall', function(req, res){
-
-
-	var data = {
-		name : "join"
-	};
-
-	res.send(data);
-
-
-  })
   .post('/welcome',function(req,res){
 
-	
+	// Just for debuggin purposes	
 	console.log(req.body.userName);
 	console.log(req.body.userPassword);
 
 	// Call the function to inser the user
     registerUser.registerUser(req, res, pool, function(flag){
 
-  	console.log("THE NEW CALLBACK", flag);
+  	console.log("Design to check if the user is in the DB", flag);	
+	
+	// Send the result back to the client. 
+	res.send(flag);
 
-// pass a local variable to the view
-var params ={ name: 'Tobi' };
-res.send(flag);
-//res.send(params);
-
-//res.render('pages/welcome', params);
-  	
   });
 
    //console.log("THIS IS THE RETURN VALUE", flag);

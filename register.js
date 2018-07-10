@@ -35,7 +35,7 @@ pool.query(queryFindUser, (err, res, flag) => {
     console.log(err.stack, "This is an error")
   } else if(res.rows[0].exists == false){
 
-    // Assign a value to the flag
+    // Assign false if the user doesn't exist. 
     flag = res.rows[0].exists;
 
     console.log(res.rows[0].exists, "Just a hint")
@@ -50,7 +50,7 @@ pool.query(queryFindUser, (err, res, flag) => {
 
   } else if(res.rows[0].exists == true){
 
-    // Assign a value to the flag.
+    // Assign true if the user exist.
      flag = res.rows[0].exists;
      console.log("THE FLAG THAT I WANT IT", flag);
 
