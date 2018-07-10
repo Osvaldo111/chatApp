@@ -38,19 +38,20 @@ express()
 	console.log(req.body.userName);
 	console.log(req.body.userPassword);
 
-	// Call the function to inser the user
-    registerUser.registerUser(req, res, pool, function(flag){
+		// Call the function to inser the user
+	    registerUser.registerUser(req, res, pool, function(flag){
 
-  	console.log("Design to check if the user is in the DB", flag);	
-	
-	// Send the result back to the client. 
-	res.send(flag);
+	  	console.log("Design to check if the user is in the DB", flag);	
+		
+		// Send the result back to the client. 
+		res.send(flag);
 
-  });
+	  });
 
-   //console.log("THIS IS THE RETURN VALUE", flag);
- 
+  })
+  .post('/welcome2',function(req,res){
 
+  	res.render('pages/welcome');
   })
    .post('/chat',function(req,res){
 
