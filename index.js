@@ -1,7 +1,9 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const app = express()
+
+
+
 
 // Initialize the pool
 const { Pool} = require('pg')
@@ -12,14 +14,13 @@ const pool = new Pool({
  	connectionString: connectionString,
 })
 
-// Module to register a User
+// Register a User
 var registerUser = require("./register.js");
-
 
 
 // In order to use JSON 
 var bodyParser = require('body-parser');
-app
+express()
   .use(bodyParser.json()) // for parsing application/json
   .use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
   .use(express.static(path.join(__dirname, 'public')))
@@ -56,17 +57,14 @@ app
 
 
   })
-  .get('/chat', function(req, res){
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-	res.render('pages/chat');
-
-
-  });
+function nameTake(){
 
 
-
-  http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
+    
+ 
+}
 
 
 
