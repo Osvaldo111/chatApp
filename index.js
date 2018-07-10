@@ -1,9 +1,7 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-
-
-
+const app = express()
 
 // Initialize the pool
 const { Pool} = require('pg')
@@ -14,13 +12,16 @@ const pool = new Pool({
  	connectionString: connectionString,
 })
 
-// Register a User
+// Module to register a User
 var registerUser = require("./register.js");
 
+// Variables needed to use Socket.io
+var http = require('http').Server(app)
+var io = require('socket.io')(http)
 
 // In order to use JSON 
 var bodyParser = require('body-parser');
-express()
+app
   .use(bodyParser.json()) // for parsing application/json
   .use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
   .use(express.static(path.join(__dirname, 'public')))
@@ -57,14 +58,21 @@ express()
 
 
   })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  .get('/chat', function(req, res){
 
-function nameTake(){
+	res.render('pages/chat');
 
 
-    
- 
-}
+  });
+
+
+   io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
+  http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
 
 
 
