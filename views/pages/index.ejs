@@ -21,7 +21,8 @@ $(document).ready(function(){
                   // The function to give a hint to the user
                  // alert(data);
                   hint(data.flag);
-                  window.location.replace(data.redirect);
+                  
+                    window.location = data.redirect                 
               }
           });
           // Prevent the usual submit of the form by the "submit" button.
