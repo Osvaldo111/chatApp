@@ -19,10 +19,7 @@ $(document).ready(function(){
               success: function(data){
                   console.log(data);
                   // The function to give a hint to the user
-                 // alert(data);
-                  hint(data.flag);
-                  
-                    window.location = data.redirect                 
+                  hint(data);
               }
           });
           // Prevent the usual submit of the form by the "submit" button.
@@ -36,6 +33,8 @@ function hint(data)
    // THe user exist on the DB 
     if (data == true) { 
       alert("Sorry, the name chosen is already taken. Please select other.");
+    }else{
+        window.location.href = "/welcome2";
     }
 }
 </script>

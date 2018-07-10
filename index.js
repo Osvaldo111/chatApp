@@ -44,9 +44,7 @@ express()
 	  	console.log("Design to check if the user is in the DB", flag);	
 		
 		// Send the result back to the client. 
-
-		var params = {flag: flag, redirect: "/welcome2"};
-		res.send(params);
+		res.send(flag);
 
 	  });
 
