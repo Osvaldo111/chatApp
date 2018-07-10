@@ -49,7 +49,7 @@ express()
 	  });
 
   })
-  .post('/welcome2',function(req,res){
+  .get('/welcome2',function(req,res){
 
   	res.render('pages/welcome');
   })
