@@ -8,7 +8,18 @@
 $(document).ready(function(){
   $('#eventForm').submit(function (e) {
           
+          // Get the name and the password
+          var username = $("userName").val();
+          var password = $("userPassword").val();
 
+          // The parameters to be sent to the server
+          var params = {username:username, password:password};
+
+          console.log("This is name", username, "This is password", password);
+
+          $.post("/verifyLogin", params, function(data, status){
+              alert("Data: " + data + "\nStatus: " + status);
+          });
           // Prevent the usual submit of the form by the "submit" button.
           e.preventDefault();      
   });
@@ -47,13 +58,13 @@ function hint(data)
 
     <!-- Default input email -->
     <label for="defaultFormLoginEmailEx" class="white-text">Your name</label>
-    <input id="defaultFormLoginEmailEx" class="form-control" name="userName" required>
+    <input id="userName" class="form-control" name="userName" required>
 
     <br>
 
     <!-- Default input password -->
     <label for="defaultFormLoginPasswordEx" class="white-text">Your password</label>
-    <input type="password" id="defaultFormLoginPasswordEx" class="form-control" name="userPassword" required>
+    <input type="password" id="userPassword" class="form-control" name="userPassword" required>
 
     <div class="text-center mt-4">
         <button class="btn btn-indigo" id="button" type="submit">Login</button>

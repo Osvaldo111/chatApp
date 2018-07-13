@@ -59,11 +59,13 @@ app
   });
 
   })
-    .post('/welcome',function(req,res){
+  .post('/verifyLogin',function(req,res){
 
 	// Just for debuggin purposes	
-	console.log(req.body.userName);
-	console.log(req.body.userPassword);
+	console.log(req.body.username);
+	console.log(req.body.password);
+
+	res.send(true);
 
   })
   .get('/welcome2',function(req,res){
