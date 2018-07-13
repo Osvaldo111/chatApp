@@ -65,7 +65,13 @@ app
 	console.log(req.body.username);
 	console.log(req.body.password);
 
-	res.send(true);
+	// Function to verify if the user exists
+	verifyUser.verifyUser(req, res, pool, function(result){
+
+		// Send the callback to the client. True if the user exist
+		// or false if it doesn't.
+		res.send(result);
+	});
 
   })
   .get('/welcome2',function(req,res){
