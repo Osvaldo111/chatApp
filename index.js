@@ -16,7 +16,7 @@ const pool = new Pool({
 var registerUser = require("./register.js");
 
 // Modulte to check if the user exists
-var verifyUser = result("./verifyUser.js");
+var verifyUser = require("./verifyUser.js");
 
 // Variables needed to use Socket.io
 var http = require('http').Server(app)
