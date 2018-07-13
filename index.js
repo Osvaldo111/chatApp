@@ -15,6 +15,9 @@ const pool = new Pool({
 // Module to register a User
 var registerUser = require("./register.js");
 
+// Modulte to check if the user exists
+var verifyUser = result("./verifyUser.js");
+
 // Variables needed to use Socket.io
 var http = require('http').Server(app)
 var io = require('socket.io')(http)
@@ -33,21 +36,27 @@ app
 
 
   })
+  .get('/SignUp', function(req, res){
+
+	res.render('pages/SignUp');
+
+
+  })
   .post('/welcome',function(req,res){
 
 	// Just for debuggin purposes	
 	console.log(req.body.userName);
 	console.log(req.body.userPassword);
 
-		// Call the function to inser the user
-	    registerUser.registerUser(req, res, pool, function(flag){
+	// Call the function to inser the user
+    registerUser.registerUser(req, res, pool, function(flag){
 
-	  	console.log("Design to check if the user is in the DB", flag);	
-		
-		// Send the result back to the client. 
-		res.send(flag);
+  	console.log("Design to check if the user is in the DB", flag);	
+	
+	// Send the result back to the client. 
+	res.send(flag);
 
-	  });
+  });
 
   })
   .get('/welcome2',function(req,res){
@@ -72,29 +81,6 @@ app
   });
 });
   http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-
-
-
-/*	// Query
-	const query = {
-	  // give the query a unique name
-	  name: 'fetch-user',
-	  text: 'SELECT * FROM users WHERE user_id = $1',
-	  values: [1]
-	}*/
-
-
-/*	// callback
-	pool.query(query, (err, res) => {
-	  if (err) {
-	    console.log(err.stack, "HAHAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
-	  } else {
-	  	 console.log("LOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKK");
-	    console.log(res.rows[0])
-	  }
-	})
-*/
 
 
 
