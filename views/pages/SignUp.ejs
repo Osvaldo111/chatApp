@@ -7,7 +7,10 @@
 //Jquery functio to submit the form without reloading the page.
 $(document).ready(function(){
   $('#eventForm').submit(function (e) {
-               
+          
+
+          // Prevent the usual submit of the form by the "submit" button.
+          e.preventDefault();      
   });
 });
 
@@ -53,7 +56,7 @@ function hint(data)
     <input type="password" id="defaultFormLoginPasswordEx" class="form-control" name="userPassword" required>
 
     <div class="text-center mt-4">
-        <button class="btn btn-indigo" id="button" type="button">Login</button>
+        <button class="btn btn-indigo" id="button" type="submit">Login</button>
     </div>
            <div class="form-group">
           <div class="col-md-12 control">
