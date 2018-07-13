@@ -7,23 +7,7 @@
 //Jquery functio to submit the form without reloading the page.
 $(document).ready(function(){
   $('#eventForm').submit(function (e) {
-          
-          // Submit the form to the "/welcome" route with the values
-          // required to register the user.
-          $.ajax({
-              type: 'POST',
-              url: 'https://connect-chat.herokuapp.com/welcome',
-              data:  $("#eventForm").serialize(),
-              // This function get the data sent from the
-              // rout "/welcome"
-              success: function(data){
-                  console.log(data);
-                  // The function to give a hint to the user
-                  hint(data);
-              }
-          });
-          // Prevent the usual submit of the form by the "submit" button.
-          e.preventDefault();      
+               
   });
 });
 

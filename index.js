@@ -59,6 +59,13 @@ app
   });
 
   })
+    .post('/welcome',function(req,res){
+
+	// Just for debuggin purposes	
+	console.log(req.body.userName);
+	console.log(req.body.userPassword);
+
+  })
   .get('/welcome2',function(req,res){
 
   	res.render('pages/welcome');
