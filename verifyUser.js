@@ -4,9 +4,11 @@ module.exports = {
 
 	verifyUser : function(req, res, pool, callback){
 
-		var userName = req.body.userName;
-		var userPassword = req.body.userPassword;
+		var userName = req.body.username;
+		var userPassword = req.body.password;
 
+
+		console.log("This function verifyUser", userName, "  ", userPassword);
 		// The result that is going to be send if the user exists
 		var result = null;
 
