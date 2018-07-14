@@ -3,29 +3,13 @@
 module.exports = {
 
 
-	registerUser: function(req, repond, pool, bcrypt, callback){
-
- 
-  const saltRounds = 10;
+	registerUser: function(req, repond, pool, callback){
 
   // The nane of the user from the form  
 	var userName = req.body.username;
   // The password of the user from the form
 	var userPassword = req.body.password;
   console.log(userName, "THIS IS THE USERNAME");
-
-
-  //Hash the password.
-  bcrypt.hash(userPassword, saltRounds, function(err, hash) {
-    // Store hash in the password DB.
-      if(err){
-        console.log(err.stack);
-      }else{
-        console.log(hash, "The password");
-        userPassword = hash;
-      }
-  });
-
 
  // Query to verify if the user exists on the database
   const queryFindUser = {
