@@ -48,6 +48,7 @@ app
 	console.log(req.body.username);
 	console.log(req.body.password);
 
+
 	// Call the function to inser the user
     registerUser.registerUser(req, res, pool, function(flag){
 
