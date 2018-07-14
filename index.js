@@ -22,9 +22,6 @@ var verifyUser = require("./verifyUser.js");
 var http = require('http').Server(app)
 var io = require('socket.io')(http)
 
-//Require to hash the password
- var bcrypt = require('bcrypt');
-
 // In order to use JSON 
 var bodyParser = require('body-parser');
 app
@@ -51,17 +48,6 @@ app
 	console.log(req.body.username);
 	console.log(req.body.password);
 
-  const saltRounds = 10;
-    //Hash the password.
-  bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
-    // Store hash in the password DB.
-      if(err){
-        console.log(err.stack);
-      }else{
-        console.log(hash, "The password");
-        req.body.password = hash;
-      }
-  });
 
 	// Call the function to inser the user
     registerUser.registerUser(req, res, pool, function(flag){
