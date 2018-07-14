@@ -13,6 +13,7 @@ module.exports = {
 		var result = null;
 
 		// Query to verify if the user exists on the database
+		// according to the username and the password.
 		const queryFindUser = {
 		  // give the query a unique name
 		  name: 'fetch-user',
@@ -26,7 +27,7 @@ module.exports = {
 		pool.query(queryFindUser, (err, res, result) => {
 
 			console.log("This is the query verify", res);
-			
+
 		  if (err) {
 		    console.log(err.stack, "This is an error")
 		  } else if(res.rows[0].exists == false){

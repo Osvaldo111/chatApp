@@ -5,12 +5,30 @@ module.exports = {
 
 	registerUser: function(req, repond, pool, callback){
 
+  //Require to hash the password
+  var bcrypt = require('bcrypt');
+  const saltRounds = 10;
+
+  // The nane of the user from the form  
 	var userName = req.body.userName;
+  // The password of the user from the form
 	var userPassword = req.body.userPassword;
   console.log(userName, "THIS IS THE USERNAME");
 
 
-// Query to verify if the user exists on the database
+  //Hash the password.
+  bcrypt.hash(userPassword, saltRounds, function(err, hash) {
+    // Store hash in the password DB.
+      if(err){
+        console.log(err.stack);
+      }else{
+        console.log(hash, "The password");
+        userPassword = hash;
+      }
+  });
+
+
+ // Query to verify if the user exists on the database
   const queryFindUser = {
     // give the query a unique name
     name: 'fetch-user',
@@ -38,7 +56,6 @@ module.exports = {
           // Assign false if the user doesn't exist. 
           flag = res.rows[0].exists;
 
-          console.log(res.rows[0].exists, "Just a hint")
           //If the user doesn't exist, insert it in the database.
           pool.query(queryInsertUser, (err, res) => {
             if (err) {
