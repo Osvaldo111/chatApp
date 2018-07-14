@@ -18,7 +18,7 @@ $(document).ready(function(){
           console.log("This is name", username, "This is password", password);
 
           $.post("/registerUser", params, function(data, status){
-              alert("Data: " + data + "\nStatus: " + status);
+              hint(data);
           });
           // Prevent the usual submit of the form by the "submit" button.
           e.preventDefault();      
