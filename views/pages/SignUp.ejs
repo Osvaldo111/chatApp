@@ -17,7 +17,7 @@ $(document).ready(function(){
 
           console.log("This is name", username, "This is password", password);
 
-          $.post("/verifyLogin", params, function(data, status){
+          $.post("/registerUser", params, function(data, status){
               alert("Data: " + data + "\nStatus: " + status);
           });
           // Prevent the usual submit of the form by the "submit" button.

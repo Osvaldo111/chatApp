@@ -12,7 +12,7 @@ $(document).ready(function(){
           // required to register the user.
           $.ajax({
               type: 'POST',
-              url: '/welcome',
+              url: '/verifyLogin',
               data:  $("#eventForm").serialize(),
               // This function get the data sent from the
               // rout "/welcome"
@@ -60,13 +60,13 @@ function hint(data)
 
     <!-- Default input email -->
     <label for="defaultFormLoginEmailEx" class="white-text">Your name</label>
-    <input id="defaultFormLoginEmailEx" class="form-control" name="userName" required>
+    <input id="defaultFormLoginEmailEx" class="form-control" name="username" required>
 
     <br>
 
     <!-- Default input password -->
     <label for="defaultFormLoginPasswordEx" class="white-text">Your password</label>
-    <input type="password" id="defaultFormLoginPasswordEx" class="form-control" name="userPassword" required>
+    <input type="password" id="defaultFormLoginPasswordEx" class="form-control" name="password" required>
 
     <div class="text-center mt-4">
         <button class="btn btn-indigo" id="button" type="submit">Login</button>
