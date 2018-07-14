@@ -3,7 +3,7 @@
 module.exports = {
 
 
-	registerUser: function(req, repond, pool, bycript, callback){
+	registerUser: function(req, repond, pool, bcrypt, callback){
 
  
   const saltRounds = 10;
