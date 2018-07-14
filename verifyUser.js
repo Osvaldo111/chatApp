@@ -31,7 +31,7 @@ module.exports = {
 
 			if (err) {
 		    console.log(err.stack, "This is an error")
-		  } else if(res.user_name){
+		  } else if(res.rows[0].user_name){
 
 		    // Assign false if the user doesn't exist. 
 		    //result = res.rows[0].exists;
