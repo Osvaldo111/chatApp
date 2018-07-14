@@ -4,6 +4,8 @@ module.exports = {
 
 	verifyUser : function(req, res, pool, callback){
 
+
+		var bcrypt = require('bcrypt');
 		var userName = req.body.username;
 		var userPassword = req.body.password;
 
