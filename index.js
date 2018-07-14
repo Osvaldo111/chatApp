@@ -22,6 +22,9 @@ var verifyUser = require("./verifyUser.js");
 var http = require('http').Server(app)
 var io = require('socket.io')(http)
 
+ //Require to hash the password
+  var bcrypt = require('bcrypt');
+
 // In order to use JSON 
 var bodyParser = require('body-parser');
 app
@@ -50,7 +53,7 @@ app
 
 
 	// Call the function to inser the user
-    registerUser.registerUser(req, res, pool, function(flag){
+    registerUser.registerUser(req, res, pool, bcrypt, function(flag){
 
   	console.log("Design to check if the user is in the DB", flag);	
 	
