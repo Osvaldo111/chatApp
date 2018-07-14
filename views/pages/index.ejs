@@ -32,9 +32,9 @@ function hint(data)
 {
    // THe user exist on the DB 
     if (data == true) { 
-      alert("Sorry, the name chosen is already taken. Please select other.");
+      window.location.href = "/chat";
     }else{
-        window.location.href = "/chat";
+        alert("Sorry, the name or password are incorrect. Try again");
     }
 }
 </script>

@@ -10,7 +10,7 @@ module.exports = {
   const saltRounds = 10;
 
   // The nane of the user from the form  
-	var userName = req.body.user;
+	var userName = req.body.username;
   // The password of the user from the form
 	var userPassword = req.body.password;
   console.log(userName, "THIS IS THE USERNAME");
