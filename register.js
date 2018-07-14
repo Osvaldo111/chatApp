@@ -13,7 +13,7 @@ module.exports = {
 	var userName = req.body.username;
   // The password of the user from the form
 	var userPassword = bcrypt.hashSync(req.body.password, saltRounds);
-  console.log(userName, "THIS IS THE USERNAME", userPassword, "PASS");
+  console.log(userName, "THIS IS THE USERNAME", userPassword, "PASSw");
 
 
  // Query to verify if the user exists on the database
