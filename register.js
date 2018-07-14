@@ -17,7 +17,7 @@ module.exports = {
 
 
   //Hash the password.
-  bcrypt.hash(userPassword, saltRounds, function(err, hash) {
+  bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
     // Store hash in the password DB.
       if(err){
         console.log(err.stack);
