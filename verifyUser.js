@@ -28,18 +28,35 @@ module.exports = {
 
 			console.log("This is the query verify", res);
 
-		  if (err) {
+
+			if (err) {
 		    console.log(err.stack, "This is an error")
-		  } else if(res.rows[0].exists == false){
+		  } else if(res.user_name){
 
 		    // Assign false if the user doesn't exist. 
-		    result = res.rows[0].exists;
+		    //result = res.rows[0].exists;
+		    result = true;
 
-		  } else if(res.rows[0].exists == true){
+		  } else {
 
 		    // Assign true if the user exist.
-		     result = res.rows[0].exists; 
+		     //result = res.rows[0].exists;
+
+		     result = false; 
 		  }
+
+		  // if (err) {
+		  //   console.log(err.stack, "This is an error")
+		  // } else if(res.rows[0].exists == false){
+
+		  //   // Assign false if the user doesn't exist. 
+		  //   result = res.rows[0].exists;
+
+		  // } else if(res.rows[0].exists == true){
+
+		  //   // Assign true if the user exist.
+		  //    result = res.rows[0].exists; 
+		  // }
 
 		  // Use the callback to get the value of the result.
 		  callback(result);
