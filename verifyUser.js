@@ -35,7 +35,13 @@ module.exports = {
 
 		    // Assign false if the user doesn't exist. 
 		    //result = res.rows[0].exists;
-		    result = true;
+		    if(bcrypt.compareSync(userPassword, res.row[0].password))
+		    {
+		    	result = true;
+		    }else{
+		    	result = false;
+		    }
+
 
 		  } else {
 
