@@ -35,6 +35,7 @@ module.exports = {
 		    console.log(err.stack, "This is an error")
 		  } else if(res.rows[0]){
 
+		  	console.log("verify USER", res.rows[0].password, "Name: ", res.rows[0].user_name)
 		  	if(res.rows[0].password == userPassword)
 		  		result = true;
 		  	else
