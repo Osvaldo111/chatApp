@@ -19,7 +19,7 @@ module.exports = {
 		const queryFindUser = {
 		  // give the query a unique name
 		  name: 'fetch-user',
-		  text: 'SELECT exists(SELECT 1 FROM users WHERE user_name ILIKE $1 LIMIT 1)',
+		  text: 'SELECT user_name, password FROM users WHERE user_name ILIKE $1)',  //SELECT user_name, password FROM users WHERE exists(SELECT 1 FROM users WHERE user_name ILIKE $1 LIMIT 1)
 		  values: [userName]
 		}
 
