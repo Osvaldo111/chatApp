@@ -20,7 +20,7 @@ module.exports = {
   const queryFindUser = {
     // give the query a unique name
     name: 'fetch-user',
-    text: 'SELECT exists(SELECT 1 FROM users WHERE user_name = $1 LIMIT 1)',
+    text: 'SELECT exists(SELECT 1 FROM users WHERE user_name ILIKE $1 LIMIT 1)',
     values: [userName]
   }
 
@@ -37,6 +37,8 @@ module.exports = {
       // Find if the user is in the database. Otherwise 
       // insert the new user.
       pool.query(queryFindUser, (err, res, flag) => {
+
+        console.log("Register Query", res);
         if (err) {
           console.log(err.stack, "This is an error")
         } else if(res.rows[0].exists == false){
