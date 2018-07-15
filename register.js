@@ -12,7 +12,7 @@ module.exports = {
   // The nane of the user from the form  
 	var userName = req.body.username;
   // The password of the user from the form
-	var userPassword = bcrypt.hashSync(req.body.password, saltRounds);
+	var userPassword = req.body.password;//bcrypt.hashSync(, saltRounds);
   console.log(userName, "THIS IS THE USERNAME", userPassword, "PASSw");
 
 

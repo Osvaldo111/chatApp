@@ -5,7 +5,7 @@ module.exports = {
 	verifyUser : function(req, res, pool, callback){
 
 
-		var bcrypt = require('bcrypt');
+	//	var bcrypt = require('bcrypt');
 		var userName = req.body.username;
 		var userPassword = req.body.password;
 
@@ -35,14 +35,18 @@ module.exports = {
 		    console.log(err.stack, "This is an error")
 		  } else if(res.rows[0]){
 
+		  	if(res.rows[0].password == userPassword)
+		  		result = true;
+		  	else
+		  		result = false;
 		    // Assign false if the user doesn't exist. 
 		    //result = res.rows[0].exists;
-		    if(bcrypt.compareSync(userPassword, res.rows[0].password))
-		    {
-		    	result = true;
-		    }else{
-		    	result = false;
-		    }
+		    // if(bcrypt.compareSync(userPassword, res.rows[0].password))
+		    // {
+		    // 	result = true;
+		    // }else{
+		    // 	result = false;
+		    // }
 
 
 		  } else {
