@@ -26,8 +26,7 @@ module.exports = {
 		}
 
 
-		// Find if the user is in the database. Otherwise 
-		// insert the new user.
+		// Find if the user is in the database.
 		pool.query(queryFindUser, (err, res, result) => {
 
 			console.log("This is the query verify", res);
@@ -35,44 +34,29 @@ module.exports = {
 
 			if (err) {
 		    console.log(err.stack, "This is an error")
-		  } else if(res.rows[0]){
+		 	 }
+		 	 // Check if the query exist 
+		 	 else if(res.rows[0]){    
 
-		  	// console.log("verify USER", res.rows[0].password, "Name: ", res.rows[0].user_name)
-		  	// if(res.rows[0].password == userPassword)
-		  	// 	result = true;
-		  	// else
-		  	// 	result = false;
+		    	// Use the function of "bcrypt" to check if the password of the
+		    	// query match with the password provided by the user.
+			    if(bcrypt.compareSync(userPassword, res.rows[0].password))
+			    {	
+			    	// Assign the result to "true"
+			    	result = true;
+			    }else{
 
-		  	
-		    // Assign false if the user doesn't exist. 
-		    //result = res.rows[0].exists;
-		    if(bcrypt.compareSync(userPassword, res.rows[0].password))
-		    {
-		    	result = true;
-		    }else{
-		    	result = false;
-		    }
-		  } else {
+			    	// If the password doesn't match 
+			    	// assign the result to "false".
+			    	result = false;
+			    }
+		  } 
+		  // If the query doesn't exist. This means the user is not in the DB.
+		  else {
 
-		    // Assign true if the user exist.
-		     //result = res.rows[0].exists;
-
-		     result = false; 
+		    // Assign the result to "false".
+		    result = false; 
 		  }
-
-		  // if (err) {
-		  //   console.log(err.stack, "This is an error")
-		  // } else if(res.rows[0].exists == false){
-
-		  //   // Assign false if the user doesn't exist. 
-		  //   result = res.rows[0].exists;
-
-		  // } else if(res.rows[0].exists == true){
-
-		  //   // Assign true if the user exist.
-		  //    result = res.rows[0].exists; 
-		  // }
-
 		  // Use the callback to get the value of the result.
 		  callback(result);
 		})

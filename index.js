@@ -38,10 +38,14 @@ app
   })
   .get('/SignUp', function(req, res){
 
+  	// This will show the sign in page.
 	res.render('pages/SignUp');
 
 
   })
+
+  // This endpoint will receive the parameters to
+  // register a user and send a response.
   .post('/registerUser',function(req,res){
 
 	// Just for debuggin purposes	
@@ -52,6 +56,7 @@ app
 	// Call the function to inser the user
     registerUser.registerUser(req, res, pool, function(flag){
 
+  	// Just testing.
   	console.log("Design to check if the user is in the DB", flag);	
 	
 	// Send the result back to the client. 
@@ -60,6 +65,9 @@ app
   });
 
   })
+
+  // This endpoint is designed to receive the parameters from 
+  // the user in order to "sign in" in the application.
   .post('/verifyLogin',function(req,res){
 
 	// Just for debuggin purposes	
@@ -85,12 +93,14 @@ app
   })
   .get('/chat', function(req, res){
 
+  	// This will show the page chat.
 	res.render('pages/chat');
 
 
   });
 
-
+   // This function is designed to send and receive 
+   // messages with the help of "socket.io"
    io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);

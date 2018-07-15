@@ -20,12 +20,13 @@ module.exports = {
   const queryFindUser = {
     // give the query a unique name
     name: 'fetch-user',
-    // This query avoid repeating the same name in lower or uppercase combinaed
-    // For example when a user choose "Saul", another user cann't use "saul" or "SaUl". 
+    // This query avoid repeating the same name in lower or uppercase combined.
+    // For example, when a user chooses "Saul", another user can't use "saul" or "SaUl". 
     text: 'SELECT exists(SELECT 1 FROM users WHERE user_name ILIKE $1 LIMIT 1)',
     values: [userName]
   }
 
+  // Query to insert the user on the DB.
   const queryInsertUser = {
     text: 'INSERT INTO users(user_name, password) VALUES($1, $2)',
     values: [userName, userPassword],
