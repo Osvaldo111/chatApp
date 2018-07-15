@@ -12,7 +12,7 @@ module.exports = {
   // The nane of the user from the form  
 	var userName = req.body.username;
   // The password of the user from the form
-	var userPassword = req.body.password;//bcrypt.hashSync(, saltRounds);
+	var userPassword = bcrypt.hashSync(req.body.password, saltRounds);
   console.log(userName, "THIS IS THE USERNAME", userPassword, "PASSw");
 
 
@@ -20,6 +20,8 @@ module.exports = {
   const queryFindUser = {
     // give the query a unique name
     name: 'fetch-user',
+    // This query avoid repeating the same name in lower or uppercase combinaed
+    // For example when a user choose "Saul", another user cann't use "saul" or "SaUl". 
     text: 'SELECT exists(SELECT 1 FROM users WHERE user_name ILIKE $1 LIMIT 1)',
     values: [userName]
   }

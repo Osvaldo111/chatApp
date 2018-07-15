@@ -19,6 +19,8 @@ module.exports = {
 		const queryFindUser = {
 		  // give the query a unique name
 		  name: 'fetch-user',
+		  // Because we avoid repetition when the name was stored, it is not neccesary
+		  // use a case sentitive query. 
 		  text: 'SELECT user_name, password FROM users WHERE user_name = $1',  //SELECT user_name, password FROM users WHERE exists(SELECT 1 FROM users WHERE user_name ILIKE $1 LIMIT 1)
 		  values: [userName]
 		}
@@ -48,8 +50,6 @@ module.exports = {
 		    // }else{
 		    // 	result = false;
 		    // }
-
-
 		  } else {
 
 		    // Assign true if the user exist.
