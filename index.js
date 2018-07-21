@@ -48,7 +48,7 @@ app
       next();
    }
 
-  //next()
+  next()
 })
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
@@ -75,7 +75,7 @@ app
 	console.log(req.body.password);
 
 	// Call the function to inser the user
-    registerUser.registerUser(req, res, pool, session, function(flag){
+    registerUser.registerUser(req, res, pool, session function(flag){
 
   	// Just testing.
   	console.log("Design to check if the user is in the DB", flag);	
