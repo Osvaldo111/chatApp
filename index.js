@@ -46,8 +46,9 @@ app
       // res.redirect('/chat');
       // console.log("This is FROm USE in", req.session.username);
       if(req.path != "/chat"){
+      	console.log("This is FROm USE in*************************", req.session.username);
         return res.redirect('https://connect-chat.herokuapp.com/chat')
-        console.log("This is FROm USE in", req.session.username);
+        
       }
       console.log("This is the Path", req.path);
       
