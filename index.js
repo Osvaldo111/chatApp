@@ -39,6 +39,7 @@ app
 
 //Check of the user is logged
   .use(function (req, res, next) {
+    console.log("This is the Path", req.path);
   if (!req.session.username) {
     req.session.username = null;
    }else
