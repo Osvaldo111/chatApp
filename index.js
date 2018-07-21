@@ -39,13 +39,16 @@ app
 
 //Check of the user is logged
   .use(function (req, res, next) {
-    console.log("This is the Path", req.path);
   if (!req.session.username) {
     req.session.username = null;
    }else
    {
       // res.redirect('/chat');
       // console.log("This is FROm USE in", req.session.username);
+      if(req.path != "/chat"){
+        res.redirect('/chat')
+        console.log("This is FROm USE in", req.session.username);
+      }
       console.log("This is the Path", req.path);
       
    }
