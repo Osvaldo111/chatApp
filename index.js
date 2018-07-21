@@ -43,7 +43,9 @@ app
     req.session.username = null;
    }else
    {
-      
+      // res.redirect('/chat');
+      // console.log("This is FROm USE in", req.session.username);
+      console.log("This is the Path", req.path);
       
    }
 
