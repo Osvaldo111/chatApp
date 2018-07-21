@@ -2,7 +2,7 @@
  DataBase. Especially when the user tries to log in.*/
 module.exports = {
 
-	verifyUser : function(req, res, pool, callback){
+	verifyUser : function(req, res, pool, session, callback){
 
 
 		var bcrypt = require('bcrypt');
@@ -44,6 +44,9 @@ module.exports = {
 			    {	
 			    	// Assign the result to "true"
 			    	result = true;
+
+			    	 
+ 					 req.session.username = userName;
 			    }else{
 
 			    	// If the password doesn't match 

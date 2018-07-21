@@ -3,7 +3,7 @@
 module.exports = {
 
 
-	registerUser: function(req, repond, pool, callback){
+	registerUser: function(req, repond, pool, session, callback){
 
   //Require to hash the password
   var bcrypt = require('bcrypt');
@@ -55,6 +55,10 @@ module.exports = {
               console.log(err.stack)
             } else {
               console.log(res.rows[0])
+
+              // Store in the session
+              
+               req.session.username = userName;
             }
           })
 

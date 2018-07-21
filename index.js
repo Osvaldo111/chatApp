@@ -22,12 +22,34 @@ var verifyUser = require("./verifyUser.js");
 var http = require('http').Server(app)
 var io = require('socket.io')(http)
 
+// Use session to store the user into a session
+var session = require('express-session')
+
 // In order to use JSON 
 var bodyParser = require('body-parser');
 app
   .use(bodyParser.json()) // for parsing application/json
   .use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
   .use(express.static(path.join(__dirname, 'public')))
+  .use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+  }))
+
+//Check of the user is logged
+  .use(function (req, res, next) {
+  if (!req.session.username) {
+    req.session.username = null;
+   }else
+   {
+      res.redirect('/chat');
+      console.log("This is FROm USE in", req.session.username);
+      next();
+   }
+
+  //next()
+})
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', function(req, res){
@@ -52,9 +74,8 @@ app
 	console.log(req.body.username);
 	console.log(req.body.password);
 
-
 	// Call the function to inser the user
-    registerUser.registerUser(req, res, pool, function(flag){
+    registerUser.registerUser(req, res, pool, session function(flag){
 
   	// Just testing.
   	console.log("Design to check if the user is in the DB", flag);	
@@ -75,7 +96,7 @@ app
 	console.log(req.body.password);
 
 	// Function to verify if the user exists
-	verifyUser.verifyUser(req, res, pool, function(result){
+	verifyUser.verifyUser(req, res, pool, session, function(result){
 
 		// Send the callback to the client. True if the user exist
 		// or false if it doesn't.
