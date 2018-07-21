@@ -45,7 +45,7 @@ app
    {
       res.redirect('/chat');
       console.log("This is FROm USE in", req.session.username);
-      next();
+      
    }
 
   next()
