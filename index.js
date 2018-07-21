@@ -121,7 +121,8 @@ app
   .get('/chat', function(req, res){
 
   	// This will show the page chat.
-	res.render('pages/chat');
+  	var params = req.session.username;
+	res.render('pages/chat', params );
 
 
   });
