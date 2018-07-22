@@ -45,7 +45,7 @@ app
 })
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', verifyLogin, function(req, res){
+  .get('/', function(req, res){
 
 	res.render('pages/index');
 
@@ -144,7 +144,7 @@ function verifyLogin(req, res, next) {
       // console.log("This is FROm USE in", req.session.username);
       
         //console.log("This is FROm USE in*************************", req.session.username);
-        return res.redirect('https://connect-chat.herokuapp.com/chat');
+        return res.redirect('https://connect-chat.herokuapp.com/chat')
         
       console.log("This is the Path", req.path, "This is the username*******", req.session.username);
       
@@ -153,5 +153,3 @@ function verifyLogin(req, res, next) {
 
 // Avoid to enter the "/chat" directly in the navigation bar if the user is not 
 // logged or doesn't have an account.
-
-
