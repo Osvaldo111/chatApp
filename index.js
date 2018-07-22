@@ -45,7 +45,7 @@ app
 })
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', function(req, res){
+  .get('/', verifyLogin, function(req, res){
 
 	res.render('pages/index');
 
