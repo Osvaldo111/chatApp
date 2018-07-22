@@ -40,7 +40,7 @@ app
 //Check of the user is logged
   .use(function (req, res, next) {
   if (!req.session.username) {
-    req.session.username = null;
+    ///req.session.username = null;
    }else
    {
       // res.redirect('/chat');
