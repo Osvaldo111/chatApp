@@ -58,7 +58,7 @@ module.exports = {
 
               // Store in the session
               
-               req.session.username = userName;
+               req.session.username = "Happy";
             }
           })
 
