@@ -41,6 +41,7 @@
   $(function () {
     var socket = io();
     $('form').submit(function(){
+      // Tell to the server your name in order to display it on the screen.
       socket.emit('chat message', "<%= username %>" + ": " + $('#m').val());
       $('#m').val('');
       return false;
