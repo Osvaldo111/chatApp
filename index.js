@@ -155,11 +155,7 @@ function verifyLogin(req, res, next) {
 // logged or doesn't have an account.
 function verifyLoginChat(req, res, next) {
   
-  if (!req.session.username) {
-    ///req.session.username = null;
-    return res.redirect('https://connect-chat.herokuapp.com');
-   }
-   next();
+
 }
 
 
