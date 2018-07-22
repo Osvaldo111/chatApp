@@ -131,7 +131,7 @@ app
 
   	// This will show the page chat.
   	var params = req.session.username;
-    console.log("This is the chat endpoint", params);
+    //console.log("This is the chat endpoint", params);
 	res.render('pages/chat', {username: params} );
 
 

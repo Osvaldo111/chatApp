@@ -60,6 +60,7 @@
     // Use Jquery
     $.post("/logout", function(result){
 
+      console.log(result, result.success);
       if(result && result.success){
         window.location.href = "/";
       }
