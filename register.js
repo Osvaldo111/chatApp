@@ -57,8 +57,8 @@ module.exports = {
               console.log(res.rows[0])
 
               // Store in the session
-              
                req.session.username = "Happy";
+               console.log("This is other session", req.session.username);
             }
           })
 
