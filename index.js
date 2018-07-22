@@ -116,16 +116,9 @@ app
   })
    .post('/logout',function(req,res){
     var success = {};
-req.session.destroy();
+
+    success = true;
     console.log("ENTER LOGOUT *************************");
-    if(req.session.username){
-      success = true;
-      console.log("IF ***********************************");
-      req.session.destroy();
-    }else{
-      success = false;
-      console.log("Else **************************************");
-    }
 
     res.send({success : success});
 
