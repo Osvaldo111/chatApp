@@ -132,7 +132,7 @@ app
 
 // Verify when the user enter in the main page and if the user is logged, allow
 // direct access to the chat.
-function verifyLoginChat(req, res, next) {
+function verifyLogin(req, res, next) {
   
   if (!req.session.username && req.path != "/") {
     ///req.session.username = null;
