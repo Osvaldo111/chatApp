@@ -153,7 +153,7 @@ function verifyLogin(req, res, next) {
 
 // Avoid to enter the "/chat" directly in the navigation bar if the user is not 
 // logged or doesn't have an account.
-function verifyLoginChat(req, res, next) {
+/*function verifyLoginChat(req, res, next) {
   
   if (!req.session.username) {
     ///req.session.username = null;
@@ -161,4 +161,4 @@ function verifyLoginChat(req, res, next) {
     next();
    }
 
-}
+}*/
