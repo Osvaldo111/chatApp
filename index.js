@@ -117,7 +117,6 @@ app
 
   	// This will show the page chat.
   	var params = req.session.username;
-    usernameSocket = params;
     //console.log("This is the chat endpoint", params);
 	res.render('pages/chat', {username: params} );
 
@@ -126,9 +125,9 @@ app
 
    // This function is designed to send and receive 
    // messages with the help of "socket.io"
-   io.on('connection', function(socket){
+   io.on('connection', function(socket, req){
   socket.on('chat message', function(msg){
-    io.emit('chat message',  usernameSocket + ': ' + msg);
+    io.emit('chat message',  req.session.username + ': ' + msg);
   });
 });
   http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
