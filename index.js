@@ -25,6 +25,7 @@ var io = require('socket.io')(http)
 // Use session to store the user into a session
 var session = require('express-session')
 
+var usernameSocket = null;
 // In order to use JSON 
 var bodyParser = require('body-parser');
 app
@@ -116,6 +117,7 @@ app
 
   	// This will show the page chat.
   	var params = req.session.username;
+    usernameSocket = params;
     //console.log("This is the chat endpoint", params);
 	res.render('pages/chat', {username: params} );
 
@@ -126,7 +128,7 @@ app
    // messages with the help of "socket.io"
    io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', req.session.username + ': ' + msg);
+    io.emit('chat message',  usernameSocket + ': ' + msg);
   });
 });
   http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
