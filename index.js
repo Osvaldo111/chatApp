@@ -45,7 +45,7 @@ app
 })
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', verifyLogin,  function(req, res){
+  .get('/', function(req, res){
 
 	res.render('pages/index');
 
@@ -136,6 +136,7 @@ function verifyLogin(req, res, next) {
   
   if (!req.session.username) {
     ///req.session.username = null;
+    next();
    }else
    {
       // res.redirect('/chat');
