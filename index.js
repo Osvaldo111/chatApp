@@ -110,7 +110,7 @@ app
     res.send({success : success});
 
   })
-  .get('/chat', function(req, res){
+  .get('/chat', verifyLoginChat, function(req, res){
 
   	// This will show the page chat.
   	var params = req.session.username;
@@ -144,7 +144,7 @@ function verifyLogin(req, res, next) {
       // console.log("This is FROm USE in", req.session.username);
       
         //console.log("This is FROm USE in*************************", req.session.username);
-        return res.redirect('https://connect-chat.herokuapp.com/chat')
+        return res.redirect('https://connect-chat.herokuapp.com/chat');
         
       console.log("This is the Path", req.path, "This is the username*******", req.session.username);
       
@@ -153,3 +153,12 @@ function verifyLogin(req, res, next) {
 
 // Avoid to enter the "/chat" directly in the navigation bar if the user is not 
 // logged or doesn't have an account.
+function verifyLoginChat(req, res, next) {
+  
+  if (!req.session.username) {
+    ///req.session.username = null;
+     return res.redirect('https://connect-chat.herokuapp.com');
+    next();
+   }
+
+}
