@@ -17,7 +17,7 @@
     <div class="card-body">
         <h4 class="card-title">Hello "<%= username %>"</h4>
         <p class="card-text">Press the button for logout.</p>
-        <a class="btn btn-deep-orange">Logout</a>
+        <a class="btn btn-deep-orange" onclick="logout()">Logout</a>
     </div>
 </div>
 
@@ -53,6 +53,20 @@
       $('#messages').append($('<li><div class="container-chat"><img class="img-chat" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkagukiM3UiQZAYYVwnZ5VJgYaYqAoCBxKqXDRQ8a7RlpU_yJs" alt="Avatar" style="width:100%;"><p>'+ msg +'</p></div></li>'));
     });
   });
+
+
+  function logout(){
+
+    // Use Jquery
+    $.post("/logout", function(result){
+
+      if(result && result.success){
+        window.location.href = "/";
+      }
+
+    });
+
+  }
 </script>
   </body>
 </html>

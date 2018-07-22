@@ -114,8 +114,17 @@ app
 
   	res.render('pages/welcome');
   })
-   .post('/chat',function(req,res){
+   .post('/logout',function(req,res){
+    var success = {};
 
+    if(req.session.username){
+      success = true;
+      req.session.destroy();
+    }else{
+      success = false;
+    }
+
+    res.send({success : success});
 
   })
   .get('/chat', function(req, res){
