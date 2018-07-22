@@ -136,7 +136,7 @@ function verifyLogin(req, res, next) {
   
   if (!req.session.username) {
     ///req.session.username = null;
-    return res.redirect('https://connect-chat.herokuapp.com')
+    
     next();
    }else if(req.path != "/chat" && req.session.username)
    {
