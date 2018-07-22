@@ -103,7 +103,7 @@ app
   })
    .post('/logout',function(req,res){
     var success = {};
-
+    req.session.destroy();
     success = true;
     console.log("ENTER LOGOUT *************************");
 
