@@ -110,7 +110,7 @@ app
     res.send({success : success});
 
   })
-  .get('/chat', function(req, res){
+  .get('/chat', verifyLoginChat, function(req, res){
 
   	// This will show the page chat.
   	var params = req.session.username;
@@ -153,12 +153,10 @@ function verifyLogin(req, res, next) {
 
 // Avoid to enter the "/chat" directly in the navigation bar if the user is not 
 // logged or doesn't have an account.
-/*function verifyLoginChat(req, res, next) {
+function verifyLoginChat(req, res, next) {
   
   if (!req.session.username) {
-    ///req.session.username = null;
      return res.redirect('https://connect-chat.herokuapp.com');
-    next();
    }
-
-}*/
+next();
+}
