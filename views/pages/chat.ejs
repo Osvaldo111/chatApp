@@ -46,7 +46,7 @@
       return false;
     });
     socket.on('chat message', function(msg){
-      $('#messages').append($('<li><div class="container-chat"><img class="img-chat" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkagukiM3UiQZAYYVwnZ5VJgYaYqAoCBxKqXDRQ8a7RlpU_yJs" alt="Avatar" style="width:100%;"><p>'+ msg +'</p></div></li>'));
+      $('#messages').append($('<li><div class="container-chat"><img class="img-chat" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkagukiM3UiQZAYYVwnZ5VJgYaYqAoCBxKqXDRQ8a7RlpU_yJs" alt="Avatar" style="width:100%;"><p>'+ "<%= username %>" + msg +'</p></div></li>'));
     });
   });
 
