@@ -39,26 +39,13 @@ app
 
 //Check of the user is logged
   .use(function (req, res, next) {
-  if (!req.session.username) {
-    ///req.session.username = null;
-   }else
-   {
-      // res.redirect('/chat');
-      // console.log("This is FROm USE in", req.session.username);
-      if(req.path != "/chat" && req.session.username){
-      	//console.log("This is FROm USE in*************************", req.session.username);
-        return res.redirect('https://connect-chat.herokuapp.com/chat')
-        
-      }
-      console.log("This is the Path", req.path, "This is the username*******", req.session.username);
-      
-   }
+  console.log("This is the Path", req.path, "This is the username*******", req.session.username);
 
   next()
 })
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', function(req, res){
+  .get('/', verifyLogin,  function(req, res){
 
 	res.render('pages/index');
 
@@ -143,5 +130,24 @@ app
   http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
+// Verify is the user is logged in order to displa
+// the time
+function verifyLogin(req, res, next) {
+  
+  if (!req.session.username) {
+    ///req.session.username = null;
+   }else
+   {
+      // res.redirect('/chat');
+      // console.log("This is FROm USE in", req.session.username);
+      if(req.path != "/chat" && req.session.username){
+        //console.log("This is FROm USE in*************************", req.session.username);
+        return res.redirect('https://connect-chat.herokuapp.com/chat')
+        
+      }
+      console.log("This is the Path", req.path, "This is the username*******", req.session.username);
+      
+   }
+}
 
 
