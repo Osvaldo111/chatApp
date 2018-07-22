@@ -103,10 +103,12 @@ app
   })
    .post('/logout',function(req,res){
     var success = {};
-    req.session.destroy();
-    success = true;
-    console.log("ENTER LOGOUT *************************");
 
+    // Destroy the session to logout
+    req.session.destroy();
+
+    // Pass the parameter to logout to the client side. 
+    success = true;
     res.send({success : success});
 
   })
@@ -124,7 +126,7 @@ app
    // messages with the help of "socket.io"
    io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    io.emit('chat message', req.session.username + ': ' + msg);
   });
 });
   http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
