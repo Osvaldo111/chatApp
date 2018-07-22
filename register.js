@@ -47,7 +47,7 @@ module.exports = {
         } else if(res.rows[0].exists == false){
 
           // Store in the session
-           req.session.username = req.session.username;
+           req.session.username = userName;
            console.log("This is other session", req.session.username);
           // Assign false if the user doesn't exist. 
           flag = res.rows[0].exists;
