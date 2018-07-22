@@ -130,9 +130,31 @@ app
   http.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-// Verify is the user is logged in order to displa
-// the time
-function verifyLogin(req, res, next) {
+// Verify when the user enter in the main page and if the user is logged, allow
+// direct access to the chat.
+function verifyLoginChat(req, res, next) {
+  
+  if (!req.session.username && req.path != "/") {
+    ///req.session.username = null;
+    return res.redirect('https://connect-chat.herokuapp.com')
+    next();
+   }else
+   {
+      // res.redirect('/chat');
+      // console.log("This is FROm USE in", req.session.username);
+      if(req.path != "/chat" && req.session.username){
+        //console.log("This is FROm USE in*************************", req.session.username);
+        return res.redirect('https://connect-chat.herokuapp.com/chat')
+        
+      }
+      console.log("This is the Path", req.path, "This is the username*******", req.session.username);
+      
+   }
+}
+
+// Avoid to enter the "/chat" directly in the navigation bar if the user is not 
+// logged or doesn't have an account.
+function verifyLoginChatSome(req, res, next) {
   
   if (!req.session.username) {
     ///req.session.username = null;
