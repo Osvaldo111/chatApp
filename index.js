@@ -112,7 +112,7 @@ app
     res.send({success : success});
 
   })
-  .get('/chat', verifyLoginChat, function(req, res){
+  .get('/chat', /*verifyLoginChat,*/ function(req, res){
 
   	// This will show the page chat.
   	var params = req.session.username;
