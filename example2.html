@@ -34,32 +34,34 @@
 
   .col{
     background-color: blue;
-    height: 150%;
+   
   }
 
    .col1{
     background-color: gray;
-    height: 50%;
+    
 
 
   }
 
-  .col-4{
-    text-align: center;
-    background-color: gray;
 
+  .colll{
+
+    height: 300px;
+    background-color: yellow;
   }
+
 
 </style>
 </head>
 
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col-3">
+<!-- <div class="container ">
+  <div class="row colll">
+    <div class="col-3 h-25 col1">
       One of three columns
     </div>
-    <div class="col-3 col1">
+    <div class="col-3 col1 h-50">
       One of three columns
     </div>
     <div class="col-6 col">
@@ -67,14 +69,85 @@
     </div>
 
   </div>
+</div> -->
+
+<div class="container p-3" style="border-style: solid;">
+  <div class="row">
+    <div class="col-12 col-sm-4" style="border-color: blue; border-style: solid; height: 300px; overflow: auto;">
+        <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title">Contacts</h4>
+    <hr>
+    <!-- Text -->
+      <div class="text-small">
+          <strong>John Doe</strong>
+          <p>Hello, Are you there?</p>
+      </div>
+    <hr>
+    <!-- Text -->
+      <div class="text-small">
+          <strong>John Doe</strong>
+          <p>Hello, Are you there?</p>
+      </div>
+          <hr>
+    <!-- Text -->
+      <div class="text-small">
+          <strong>John Doe</strong>
+          <p>Hello, Are you there?</p>
+      </div>
+          <hr>
+    <!-- Text -->
+      <div class="text-small">
+          <strong>John Doe</strong>
+          <p>Hello, Are you there?</p>
+      </div>
+          <hr>
+    <!-- Text -->
+      <div class="text-small">
+          <strong>John Doe</strong>
+          <p>Hello, Are you there?</p>
+      </div>
+
+  </div>
+    </div>
+     <div class="col-12 col-sm-8" style="background-color: gray; padding-left: 0px; padding-right: 0px;">
+    <div style="background-color: red; height: 200px;">The upper part</div>    
+    <div style="background-color: yellow; height: 100px;">The upper part</div>    
+
+    </div>
+  </div>
+</div>
 
 
 
-<div style="height: 200px; background-color: rgba(255,0,0,0.1);">
+<div class="row">
+  <div class="col-12 col-md-8" style="background-color: gray;">.col-12 .col-md-8</div>
+  <div class="col-6 col-md-4" style="background-color: red;">.col-6 .col-md-4</div>
+</div>
+
+
+
+<!-- <div style="height: 300px; background-color: rgba(255,0,0,0.1);">
   <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%</div>
   <div class="h-50 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%</div>
   <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%</div>
   <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%</div>
+</div> -->
+
+<!-- Card -->
+<div class="card" style="width: 30%; height: 10%;">
+  <!-- Card content -->
+  <div class="card-body">
+      <!-- Text -->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<!-- Card -->
+
+<div class="container w-25 p-3">
+  
 </div>
 </body>
 
