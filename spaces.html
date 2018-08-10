@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.cero {
+
+    height: 100vh;
+    margin: auto;
+    padding: auto;
+    background-color: powderblue;
+
+    
+}
+
+.first{
+	height: 98%;
+	width: 50%;
+	right: 0;
+	position: absolute;
+	background-color: gray;
+}
+
+.contacts-section{
+	position: absolute;
+	height: 80%;
+	width: 25%;
+	background-color: gray;
+	bottom: 0%;
+	margin: 0.5%;
+	left: 0;
+}
+
+.chat-section{
+	position: absolute;
+	height: 80%;
+	width: 75%;
+	background-color: green;
+	right: 0%;
+	bottom: 0;
+	margin: 0.5%;
+
+}
+
+#textarea-control{
+
+	resize: none;
+	border: 1px solid;
+	height: 100%;
+}
+</style>
+</head>
+
+<title>Chat App</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script>
+
+<body>
+<div class="cero">
+
+	<!-- Use Boostrap utilities to align items to the bottom with the Grid System, and use'
+	     no gutters to remove the margin and paddding. It is useful to set the row to 100% to
+	     match with the 100vh "monitor size"-->
+	<div class="row align-items-end no-gutters" style="height: 100%;">
+		<!-- Use the Boostrap utilities to set one colum to be the 3 of the 12 posibles sizes-->
+		<div class="col-12 col-sm-3" style="border: solid; height: 80%; overflow: auto;">
+	      <!-- Card content -->
+			  <div class="card-body">
+
+			    <!-- Title -->
+			    <h4 class="card-title">Contacts</h4>
+			    <hr>
+			    <!-- Text -->
+			      <div class="text-small">
+			          <strong>John Doe</strong>
+			          <p>Hello, Are you there?</p>
+			      </div>
+			    <hr>
+			    <!-- Text -->
+			      <div class="text-small">
+			          <strong>John Doe</strong>
+			          <p>Hello, Are you there?</p>
+			      </div>
+			          <hr>
+			    <!-- Text -->
+			      <div class="text-small">
+			          <strong>John Doe</strong>
+			          <p>Hello, Are you there?</p>
+			      </div>
+			          <hr>
+			    <!-- Text -->
+			      <div class="text-small">
+			          <strong>John Doe</strong>
+			          <p>Hello, Are you there?</p>
+			      </div>
+			          <hr>
+			    <!-- Text -->
+			      <div class="text-small">
+			          <strong>John Doe</strong>
+			          <p>Hello, Are you there?</p>
+			      </div>
+			  </div>
+		</div>
+		<!-- The colum 9 to be the 0 of the 12 posibilities of Boostrap-->
+		<div class="col-12 col-sm-9" style="border: solid; border-color: gray; height: 80%; overflow: auto;">
+			<!--The chat area to display the messages-->
+			<div style="height: 90%;">
+			  	<!-- Card content Right side -->
+				<div class="card-body" style="background-color: white; width: 60%; margin: 10px; border-style: solid;">
+					<!-- Title -->
+					<strong class="card-title" style="display: inline;">Card title</strong>
+					<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+					<hr>
+					<!-- Text -->
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				</div>
+
+			  	<!-- Card content leftt side -->
+				<div class="card-body" style="background-color: white; width: 60%; margin: 10px; border-style: solid;">
+					<!-- Title -->
+					<strong class="card-title" style="display: inline;">Card title</strong>
+					<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+					<hr>
+					<!-- Text -->
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				</div>
+
+			</div>    
+			<!---The box area to write the messages-->
+			<div class="row no-gutters" style="background-color: green; height: 10%;">
+				<div class="col-11" style="background-color: pink;">
+					<textarea class="form-control" id="textarea-control" placeholder="Write something here..."></textarea>
+				</div>
+				<button class="col-1">
+					 <i class="fa fa-send" aria-hidden="true"></i>
+				</button>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<!-- 	<div class="contacts-section">
+		
+	</div>
+	<div class="chat-section"></div> -->
+
+</body>
+</html>
