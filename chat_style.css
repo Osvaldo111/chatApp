@@ -1,0 +1,62 @@
+/*This class is designed to be the base form of 
+ the app to set the size of the window or screen */
+.background-chat-form {
+    height: 100vh;
+    margin: auto;
+    padding: auto;
+    background-color: powderblue;
+}
+
+/* This class is design the size of the contact box,
+   the chat section and the input area. It´s prefereable
+   use 100% to divided the other items according to
+   percentage*/
+.chat-boxes{
+	height: 100%;
+}
+
+/* This class is designed to be the format of the contact
+    section. */
+.contacts-section{
+
+	border: solid;
+	height: 80%;
+	overflow: auto;
+}
+
+/*This class is designed to be the format of
+   the chat area and input bar area*/
+.chat-section{
+
+	border: solid;
+	border-color: gray;
+	height: 80%;
+
+}
+
+/*This class is designed to give format to 
+  the messages sent. */
+.message-sent{
+
+	background-color: white;
+	width: 60%;
+	margin: 1%;
+	border-style: solid;
+
+}
+
+/*This class is design to give format to
+  the messages received. */
+.message-received{
+
+	background-color: white;
+	width: 60%;
+	border-style: solid;
+	margin: 1% 1% 1% 39%;
+}
+
+/*This class is designed to give format to
+   the input area of the chat section. */
+.input-messages{
+
+}
