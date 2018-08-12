@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#textarontrol{
 
-	resize: none;
-	border: 1px solid;
-	height: 100%;
-}
-</style>
 </head>
 
 <title>Chat App</title>
@@ -36,12 +29,33 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script>
 
 <body>
-<div class="background-chat-form">
 
+
+<div class="background-chat-form">
 	<!-- Use Boostrap utilities to align items to the bottom with the Grid System, and use'
 	     no gutters to remove the margin and paddding. It is useful to set the row to 100% to
 	     match with the 100vh "monitor size"-->
-	<div class="row align-items-end no-gutters chat-boxes">
+	<div class="chat-boxes">
+	<div class="row no-gutters first-row">
+		<div class="col-12 col-sm-3" style="background-color: yellow; border: solid;">
+			<div class="card" style="height: 100%">
+			    <div class="card-body">
+			        <p class="card-text">With supporting .</p>
+			    </div>
+			</div>
+		</div>
+
+		<div class="col-12 col-sm-9" style="background-color: gray; border: solid;">
+			<div class="card" style="height: 100%;">
+			    <div class="card-body">
+			        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+			    </div>
+			</div>
+		</div>
+		
+
+	</div>
+	<div class="row no-gutters second-row">
 		<!-- Use the Boostrap utilities to set one colum to be the 3 of the 12 posibles sizes-->
 		<div class="col-12 col-sm-3 contacts-section">
 	      <!-- Card content -->
@@ -135,7 +149,7 @@
 			<!---The box area to write the messages-->
 			<div class="row no-gutters" style="background-color: green; height: 10%;">
 				<div class="col-11" style="background-color: pink;">
-					<textarea class="form-control" id="textarea-control" placeholder="Write something here..." style="height: 100%;"></textarea>
+					<textarea class="form-control input-chat-control" id="chat-input" placeholder="Write something here..."></textarea>
 				</div>
 				<button class="col-1">
 					 <i class="fa fa-send" aria-hidden="true"></i>
@@ -143,7 +157,7 @@
 			</div>
 
 		</div>
-
+	</div>
 	</div>
 
 </div>

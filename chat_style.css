@@ -15,12 +15,24 @@
 	height: 100%;
 }
 
+/* This class is the upper row of the chat which includes
+    the header*/
+.first-row{
+	height: 10%;
+	background-color: red;
+}
+
+/* This class is the lower row of the chat which includes
+    the contact section and the chat section*/
+.second-row{
+	height: 90%;
+}
+
 /* This class is designed to be the format of the contact
     section. */
 .contacts-section{
 
 	border: solid;
-	height: 80%;
 	overflow: auto;
 }
 
@@ -30,7 +42,6 @@
 
 	border: solid;
 	border-color: gray;
-	height: 80%;
 
 }
 
@@ -57,6 +68,9 @@
 
 /*This class is designed to give format to
    the input area of the chat section. */
-.input-messages{
+.input-chat-control{
 
+	resize: none;
+	border: 1px solid;
+	height: 100%;
 }
