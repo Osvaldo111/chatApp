@@ -17,15 +17,16 @@
 
 /* This class is the upper row of the chat which includes
     the header*/
-.first-row{
+/*.first-row{
+	min-height: 10%;
 	height: 10%;
 	background-color: red;
 }
-
+*/
 /* This class is the lower row of the chat which includes
     the contact section and the chat section*/
 .second-row{
-	height: 90%;
+	height: calc(100% - 20px);
 }
 
 /* This class is designed to be the format of the contact
@@ -34,6 +35,7 @@
 
 	border: solid;
 	overflow: auto;
+	
 }
 
 /*This class is designed to be the format of
@@ -42,6 +44,7 @@
 
 	border: solid;
 	border-color: gray;
+	
 
 }
 
