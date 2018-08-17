@@ -2,11 +2,6 @@
 <html>
 <head>
 <style>
-.responsive {
-    width: 100%;
-    max-width: 20%;
-    height: auto;
-}
 </style>
 </head>
 
@@ -45,94 +40,143 @@
 
 	<div class="chat-boxes">
 		<!--/.Navbar danger color-->
-<nav class="navbar navbar-dark danger-color" style="height: 20px;">
-...
-</nav>
+		<!--Navbar-->
+		<nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
-	<div class="row no-gutters second-row">
-		<div class="col-12 col-sm-3 contacts-section">
-	      <!-- Card content -->
-			  <div class="card-body">
-			    <!-- Title -->
-			    <h4 class="card-title">Contacts</h4>
-			    <hr>
-			    <!-- Text -->
-			      <div class="text-small">
-			          <strong>John Doe</strong>
-			          <p>Hello, Are you there?</p>
-			      </div>
-			    <hr>
-			    <!-- Text -->
-			      <div class="text-small">
-			          <strong>John Doe</strong>
-			          <p>Hello, Are you there?</p>
-			      </div>
-			          <hr>
-			    <!-- Text -->
-			      <div class="text-small">
-			          <strong>John Doe</strong>
-			          <p>Hello, Are you there?</p>
-			      </div>
-			          <hr>
-			    <!-- Text -->
-			      <div class="text-small">
-			          <strong>John Doe</strong>
-			          <p>Hello, Are you there?</p>
-			      </div>
-			          <hr>
-			    <!-- Text -->
-			      <div class="text-small">
-			          <strong>John Doe</strong>
-			          <p>Hello, Are you there?</p>
-			      </div>
-			  </div>
-		</div>
-		<!-- This colum is size 9 of 12 according Boostrap utilities. If the size is small,
-		     it will take the size 12-->
-		<div class="col-12 col-sm-9 chat-section">
-			<!--The chat area to display the messages-->
-			<div style="height: 90%;overflow: auto;">
-			  	<!-- The format format of the message sent -->
-				<div class="card-body message-sent">
-					<!-- Title -->
-					<strong class="card-title" style="display: inline;">Card title</strong>
-					<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
-					<hr>
-					<!-- Text -->
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
-							  	<!-- Card content Right side -->
-				<div class="card-body message-received">
-					<!-- Title -->
-					<strong class="card-title" style="display: inline;">Card title</strong>
-					<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
-					<hr>
-					<!-- Text -->
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
+		    <!-- Navbar brand -->
+		    <a class="navbar-brand" href="#">Navbar</a>
 
-											  	<!-- Card content Right side -->
-				<div class="card-body message-received">
-					<!-- Title -->
-					<strong class="card-title" style="display: inline;">Card title</strong>
-					<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
-					<hr>
-					<!-- Text -->
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
-			</div>    
-			<!---The box area to write the messages-->
-			<div class="row no-gutters" style="background-color: green; height: 10%;">
-				<div class="col-11" style="background-color: pink;">
-					<textarea class="form-control input-chat-control" id="chat-input" placeholder="Write something here..."></textarea>
-				</div>
-				<button class="col-1">
-					 <i class="fa fa-send" aria-hidden="true"></i>
-				</button>
+		    <!-- Collapse button -->
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+		        aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		    </button>
+
+		    <!-- Collapsible content -->
+		    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+		        <!-- Links -->
+		        <ul class="navbar-nav mr-auto">
+		            <li class="nav-item active">
+		                <a class="nav-link" href="#">Home
+		                    <span class="sr-only">(current)</span>
+		                </a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">Features</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">Pricing</a>
+		            </li>
+
+		            <!-- Dropdown -->
+		            <li class="nav-item dropdown">
+		                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+		                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+		                    <a class="dropdown-item" href="#">Action</a>
+		                    <a class="dropdown-item" href="#">Another action</a>
+		                    <a class="dropdown-item" href="#">Something else here</a>
+		                </div>
+		            </li>
+
+		        </ul>
+		        <!-- Links -->
+
+		        <form class="form-inline">
+		            <div class="md-form my-0">
+		                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+		            </div>
+		        </form>
+		    </div>
+		    <!-- Collapsible content -->
+
+		</nav>
+		<!--/.Navbar-->
+
+		<div class="row no-gutters second-row">
+			<div class="col-12 col-sm-3 contacts-section">
+		      <!-- Card content -->
+				  <div class="card-body">
+				    <!-- Title -->
+				    <h4 class="card-title">Contacts</h4>
+				    <hr>
+				    <!-- Text -->
+				      <div class="text-small">
+				          <strong>John Doe</strong>
+				          <p>Hello, Are you there?</p>
+				      </div>
+				    <hr>
+				    <!-- Text -->
+				      <div class="text-small">
+				          <strong>John Doe</strong>
+				          <p>Hello, Are you there?</p>
+				      </div>
+				          <hr>
+				    <!-- Text -->
+				      <div class="text-small">
+				          <strong>John Doe</strong>
+				          <p>Hello, Are you there?</p>
+				      </div>
+				          <hr>
+				    <!-- Text -->
+				      <div class="text-small">
+				          <strong>John Doe</strong>
+				          <p>Hello, Are you there?</p>
+				      </div>
+				          <hr>
+				    <!-- Text -->
+				      <div class="text-small">
+				          <strong>John Doe</strong>
+				          <p>Hello, Are you there?</p>
+				      </div>
+				  </div>
 			</div>
+			<!-- This colum is size 9 of 12 according Boostrap utilities. If the size is small,
+			     it will take the size 12-->
+			<div class="col-12 col-sm-9 chat-section">
+				<!--The chat area to display the messages-->
+				<div style="height: 90%;overflow: auto;">
+				  	<!-- The format format of the message sent -->
+					<div class="card-body message-sent">
+						<!-- Title -->
+						<strong class="card-title" style="display: inline;">Card title</strong>
+						<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+						<hr>
+						<!-- Text -->
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+								  	<!-- Card content Right side -->
+					<div class="card-body message-received">
+						<!-- Title -->
+						<strong class="card-title" style="display: inline;">Card title</strong>
+						<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+						<hr>
+						<!-- Text -->
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
 
+												  	<!-- Card content Right side -->
+					<div class="card-body message-received">
+						<!-- Title -->
+						<strong class="card-title" style="display: inline;">Card title</strong>
+						<small  class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+						<hr>
+						<!-- Text -->
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>    
+				<!---The box area to write the messages-->
+				<div class="row no-gutters" style="background-color: green; height: 10%;">
+					<div class="col-11" style="background-color: pink;">
+						<textarea class="form-control input-chat-control" id="chat-input" placeholder="Write something here..."></textarea>
+					</div>
+					<button class="col-1">
+						 <i class="fa fa-send" aria-hidden="true"></i>
+					</button>
+				</div>
+
+			</div>
 		</div>
-	</div>
 	</div>
 
 </div>
