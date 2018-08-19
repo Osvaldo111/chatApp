@@ -1,0 +1,9 @@
+.element {
+  @include float-left;
+}
+.another-element {
+  @include float-right;
+}
+.one-more {
+  @include float-none;
+}
