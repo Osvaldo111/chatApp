@@ -33,25 +33,46 @@
 </script>
 <style type="text/css">
 	
+    
+    html, body{
+        
+        height: 100%;
+        margin: 0;
+        background-color: aquamarine;
+    }
+.box{
+	display: flex;
 
+	flex-flow: row wrap;
+    height: 100%;
+}
+
+      .one {
+        flex: 1 1 auto;
+      }
+
+      .two {
+        flex: 1 1 auto;
+      }
+
+      .three {
+        flex: 1 1 auto;
+        
+      }
 </style>
 </head>
 
 <body>
 
-<div class="row">
-  <div class="col-md-6" style="background-color: aliceblue;">.col-md-4</div>
-  <div class="col-md-5 offset-md-1" style="background-color: aqua;">.col-md-4 .offset-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
-  <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
-</div>
-<div class="row">
-  <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
-</div>
+<div class="box" style="background-color: gray;">
     
-    
+    <div>
+        <div class="one" style="background-color: yellow; width: 100%;">1</div>
+        <div class="two" style="background-color: red; height: 100%;" >2</div>
+        <div class="three" style="background-color: beige;">3</div>  
+    </div>
+
+</div>
 </body>
 
 </html>
