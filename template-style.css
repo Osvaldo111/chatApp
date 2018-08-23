@@ -34,6 +34,7 @@ full screen*/
 full screen*/
 .chat-section{
     overflow: auto;
+    height: 90%;
 }
 
 /*This class is designed to give format to 
