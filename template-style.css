@@ -59,4 +59,28 @@ the messages received. */
 }
 
 
+/*Set a fix height of the navigation bar*/
+.navbar{
+	height: 50px;
+}
+
+@media screen and (max-width: 768px){
+    
+    .col-3, .col-9{
+        background-color: aqua;
+        
+    }
+    
+    .message-sent{
+        width: 90%;
+    }
+    
+    .message-received{
+        width: 90%;
+        margin: 1% 1% 1% auto;
+    }
+    
+}
+
+
 
