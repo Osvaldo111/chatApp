@@ -244,9 +244,11 @@ it will not work as expected-->
             $(function () {
                 var socket = io();
                 $('form').submit(function(){
+
                     // Tell to the server your name in order to display it on the screen.
                     socket.emit('chat message', "<%= username %>" + ":" + $('#input-message').val());
-                                $('#input-message').val('SOme');
+
+                    $('#input-message').val('');
                     return false;
                 });
                 socket.on('chat message', function(msg){
