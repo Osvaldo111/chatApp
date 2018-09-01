@@ -1,0 +1,86 @@
+/*Set the heght to 100% to covert the
+full screen*/
+html,body{
+    height: 100%;
+    background-color: beige;
+}
+
+/*Use the flexbox to display the navigation bar
+in proportion to the full size of the screen,
+in order to avoid the overflow bar*/
+.container-fluid{
+    display: flex;
+    flex-flow: column;
+    background-color: azure;
+    height: 100%;
+    padding: 0;
+}
+
+/*This section is for the row that is the base
+layout of the contact section, and the chat
+section. The height is set to 100% to covert 
+the full window size*/
+.chat-content{
+    height: 100%;
+}
+
+/*Let the contact section overflow to mantain the
+full screen*/
+.contact-section{
+    overflow: auto;
+}
+
+/*Let the chat section overflow to mantain the
+full screen*/
+.chat-section{
+    overflow: auto;
+    height: 90%;
+}
+
+/*This class is designed to give format to 
+the messages sent. */
+.message-sent{
+
+    background-color: white;
+    width: 60%;
+    margin: 1%;
+    border-style: solid;
+
+}
+
+/*This class is design to give format to
+the messages received. */
+.message-received{
+
+    background-color: white;
+    width: 60%;
+    border-style: solid;
+    margin: 1% 1% 1% 39%;
+}
+
+
+/*Set a fix height of the navigation bar*/
+.navbar{
+	height: 50px;
+}
+
+@media screen and (max-width: 768px){
+    
+    .col-3, .col-9{
+        background-color: aqua;
+        
+    }
+    
+    .message-sent{
+        width: 90%;
+    }
+    
+    .message-received{
+        width: 90%;
+        margin: 1% 1% 1% auto;
+    }
+    
+}
+
+
+
