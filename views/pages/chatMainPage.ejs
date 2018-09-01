@@ -40,7 +40,7 @@ it will not work as expected-->
                                             <!---Display Name-->
                                             <div class="md-form mb-5">
                                                 <i class="fa fa-user prefix grey-text"></i>
-                                                <input type="text" id="orangeForm-name" class="form-control validate">
+                                                <input type="text" id="form-EditProfile" class="form-control validate">
                                                 <label>Display Name</label>
                                             </div>
                                             <!---First Name-->
@@ -88,7 +88,7 @@ it will not work as expected-->
                                             <!---Find User-->
                                             <div class="md-form mb-5">
                                                 <i class="fa fa-user prefix grey-text"></i>
-                                                <input type="text" id="orangeForm-name" class="form-control validate">
+                                                <input type="text" id="form-AddUser" class="form-control validate">
                                                 <label>Find User by name or email</label>
                                             </div>
                                         </div>
@@ -110,10 +110,10 @@ it will not work as expected-->
                                             </button>
                                         </div>
                                         <div class="modal-body mx-3">
-                                            <!---Find User-->
+                                            <!---Create Space-->
                                             <div class="md-form mb-5">
                                                 <i class="fa fa-user prefix grey-text"></i>
-                                                <input type="text" id="orangeForm-name" class="form-control validate">
+                                                <input type="text" id="form-CreateSpace" class="form-control validate">
                                                 <label>Space name</label>
                                             </div>
                                         </div>
@@ -219,10 +219,10 @@ it will not work as expected-->
                         </div>
                     </div>
                     <!--Input area-->
-                    <div class="input-group" style="height: 10%;">
+                    <form class="input-group" style="height: 10%;" id="input-message-form">
                         <textarea class="form-control" aria-label="With textarea" style="resize: none;" id="input-message"></textarea>
-                        <button class="btn btn-mdb-color waves-effect m-0" type="button"><i class="fa fa-send" aria-hidden="true"></i></button>
-                    </div>
+                        <button class="btn btn-mdb-color waves-effect m-0"><i class="fa fa-send" aria-hidden="true"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -245,8 +245,8 @@ it will not work as expected-->
                 var socket = io();
                 $('form').submit(function(){
                     // Tell to the server your name in order to display it on the screen.
-                    socket.emit('chat message', "<%= username %>" + ": + $('#input-message').val());
-                                $('#input-message').val('');
+                    socket.emit('chat message', "<%= username %>" + ":" + $('#input-message').val());
+                                $('#input-message').val('SOme');
                     return false;
                 });
                 socket.on('chat message', function(msg){
