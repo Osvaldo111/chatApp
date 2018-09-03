@@ -27,10 +27,24 @@
                 $('#m').val('');
                 return false;
             });
+
+            /*Receiving the message from the server in the room "chat message"*/
+          
             
-            socket.on('chat message', function(msg){
+            socket.on('chat', function(msg){
+                $('#messages').append($('<li>').text(msg));
+            })            
+            
+            socket.on('this', function(msg){
+                $('#messages').append($('<li>').text(msg));
+            })    
+            
+            socket.on('game', function(msg){
                 $('#messages').append($('<li>').text(msg));
             })
+            
+            
+            
         });
     </script>
     <body>
