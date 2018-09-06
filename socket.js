@@ -9,13 +9,18 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
     console.log('a user connected');
 
-   // io.emit('this', "Helllllllo");
+    // io.emit('this', "Helllllllo");
 
     socket.on('chat message', function(msg){
-        console.log('message: ' + msg.message + " username" + msg.name);
+        console.log('message: ' + msg.message + " username " + msg.name);
 
+        io.emit(msg.name, msg.message);
+        // Broadcast sento to everyone except the sender
+        // socket.broadcast.emit('this','Doe');
         /*This is to emit to everyone in the room "chat message"*/
-        io.emit('chat', msg.message);
+        //io.emit('chat', msg.message);
+        //socket.to('game').emit('game', "let's play a game");
+
 
         /*This is to emit to each indivicual by their username*/
         /*Pass the name in the "msg"*/
