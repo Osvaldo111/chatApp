@@ -18,11 +18,38 @@
 
     <!--Socket in the client side-->
     <script>
+
+
+        function getValue(obj, callback){
+
+            $('#lol').submit(function(e){
+                e.preventDefault();
+                obj.name = $('#name').val();
+                console.log('Value inside form ', obj.name);
+                $('#name').val(''); 
+
+            }); 
+            callback();
+        }
+        
+
         $(function () {
-            
+            var $Obj = { name: 'Josh'};
+
+            getValue($Obj, function(){
+                console.log('The value of name ', $Obj.name);
+            });
+
+            $('#buttonName').click(function(){
+
+
+
+            });
+            //    console.log('The  new one', $value);
             var $name = null;
             var socket = io();
             $('form').submit(function(){
+                //  console.log('The  new one inside form ', $value);
                 var $message = $('#m').val();
                 $name = $('#name').val();
                 var $params = { "message": $message, "name":$name};
@@ -33,13 +60,8 @@
             });
 
 
-            $('#lol').submit(function(){
-                $name = $('#name').val();
-                $('#name').val('');
-                return false;
 
-            });
-            console.log($name);
+            //console.log($name);
 
             /*Receiving the message from the server in the room "chat message"*/
             socket.on('chat', function(msg){
@@ -64,7 +86,7 @@
             <input id="m" autocomplete="off" /><button>Send</button>
         </form>
         <form action="" style="margin-bottom: 50px" id="lol">
-            <input id="name" autocomplete="off" /><button>Name</button>
+            <input id="name" autocomplete="off" /><button id="buttonName">Name</button>
         </form>
     </body>
 </html>

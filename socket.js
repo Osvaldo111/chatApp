@@ -14,7 +14,7 @@ io.on('connection', function(socket){
     socket.on('chat message', function(msg){
         console.log('message: ' + msg.message + " username " + msg.name);
 
-        io.emit(msg.name, msg.message);
+        io.emit('chatting', msg.message);
         // Broadcast sento to everyone except the sender
         // socket.broadcast.emit('this','Doe');
         /*This is to emit to everyone in the room "chat message"*/
